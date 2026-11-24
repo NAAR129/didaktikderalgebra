@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bruchabenteuer – Auf dem Zahlenstrahl</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo">🦊</span>
+    <div>
+      <small>MATHE-ABENTEUER</small>
+      <h1>Bruchabenteuer</h1>
+    </div>
+  </div>
+  <div class="header-actions">
+    <label class="language-picker">🌐 <select id="language" aria-label="Language / Sprache"><option value="de">Deutsch</option><option value="en">English</option><option value="tr">Türkçe</option><option value="ar">العربية</option><option value="uk">Українська</option><option value="ru">Русский</option></select></label>
+    <span id="coins" class="coin">★ 0</span>
+    <button id="sound" aria-pressed="false">Ton aus</button>
+    <button id="teacher" aria-pressed="false">Lehrermodus: aus</button><button id="reset" class="quiet">Fortschritt löschen</button>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div>
+      <p class="eyebrow">AUF DEM ZAHLENSTRAHL</p>
+      <h2>Spring mit Fino durch die Bruchwelten!</h2>
+      <p>Wähle eine Einteilung, beobachte die Sprünge und finde den Zielpunkt.</p>
+    </div>
+    <div class="progress">
+      <span id="progressText"></span>
+      <progress id="progress" max="25" value="0"></progress>
+    </div>
+  </section>
+
+  <section class="info-dock" aria-label="Hilfen und Zusatzinfos">
+    <details class="info-card">
+      <summary>🎮 So spielst du</summary>
+      <div class="info-body">
+        <p>1. Wähle eine passende Einteilung.</p>
+        <p>2. Schau dir die Sprünge an.</p>
+        <p>3. Klicke auf den Zielpunkt oder gib den Bruch ein.</p>
+      </div>
+    </details>
+    <details class="info-card">
+      <summary>💡 Merkhilfe</summary>
+      <div class="info-body">
+        <p>Beim Addieren und Subtrahieren brauchst du gleich große Teilstücke.</p>
+        <p>Darum suchst du einen gemeinsamen Nenner.</p>
+      </div>
+    </details>
+    <details class="info-card">
+      <summary>🧠 Extra erklärt</summary>
+      <div class="info-body">
+        <p>Beim Erweitern ändert sich der Wert nicht. Du teilst dieselbe Strecke nur feiner ein.</p>
+      </div>
+    </details>
+  </section>
+
+  <div class="modebar" role="group" aria-label="Rechenart"><button data-mode="plus" aria-pressed="true">＋ Plus</button><button data-mode="minus" aria-pressed="false">− Minus</button><button data-mode="mixed" aria-pressed="false">± Gemischt</button></div>
+  <nav id="levels" aria-label="Spielwelten"></nav>
+
+  <section class="game" aria-labelledby="worldTitle">
+    <div class="gamehead">
+      <div>
+        <p class="eyebrow" id="worldMeta"></p>
+        <h2 id="worldTitle"></h2>
+        <p id="worldDesc"></p>
+      </div>
+      <span id="taskCount" class="pill"></span>
+    </div>
+
+    <div id="exploreControls" hidden>
+      <p>Stelle eigene Brüche ein und beobachte die Sprünge.</p>
+      <label id="exploreOperator" hidden>Rechenart <select id="freeOp"><option value="1">Plus</option><option value="-1">Minus</option></select></label><div id="fractionControls"></div>
+    </div>
+
+    <div class="task">
+      <div><span class="blue">SPRUNG 1</span><span class="equation" id="first"></span></div>
+      <b id="operator">+</b>
+      <div><span class="orange">SPRUNG 2 <span id="direction">→</span></span><span class="equation" id="second"></span></div>
+      <b>=</b>
+      <span id="question" class="equation">?</span>
+    </div>
+
+    <div class="toolbar">
+      <label for="division">Einteilung pro Einheit</label>
+      <select id="division"></select>
+      <button id="preview" class="secondary">Ersten Sprung ansehen</button>
+      <button id="replay" class="secondary" hidden>Sprünge wiederholen</button>
+    </div>
+
+    <div class="scene-scroll" tabindex="0" aria-label="Spielwelt, horizontal scrollbar">
+      <svg id="scene" viewBox="0 0 1000 340" role="group" aria-label="Interaktiver Zahlenstrahl"></svg>
+    </div>
+
+    <div class="legend">
+      <span><i class="dot blue-bg"></i> Erster Sprung</span>
+      <span><i class="dot orange-bg"></i> Zweiter Sprung</span>
+      <span><i class="dot purple-bg"></i> Deine Vermutung</span>
+    </div>
+
+    <div class="work">
+      <section>
+        <h3 id="workTitle">1. Gemeinsamen Nenner finden</h3>
+        <p id="gridFeedback" aria-live="polite"></p>
+        <div id="expand"></div>
+      </section>
+      <section id="answerPanel">
+        <h3>2. Wo landet Fino?</h3>
+        <p>Klicke eine Markierung an oder gib einen Bruch ein.</p>
+        <form id="answerForm">
+          <div class="answer-frac">
+            <input id="num" type="number" inputmode="numeric" min="0" max="1000000" step="1" required aria-label="Zähler" placeholder="Zähler">
+            <input id="den" type="number" inputmode="numeric" min="1" max="1000000" step="1" required aria-label="Nenner" placeholder="Nenner">
+          </div>
+          <button class="primary" id="check" type="submit">Antwort prüfen</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="feedback" id="feedback" role="status" aria-live="polite">Wähle eine Einteilung und finde Finos Zielpunkt.</div>
+
+    <div class="bottom-actions">
+      <button id="hint" class="secondary">💡 Hinweis</button>
+      <button id="repeat" class="secondary">Neu starten</button>
+      <button id="next" class="primary" hidden>Weiter →</button>
+    </div>
+  </section>
+
+  <footer>Bruchabenteuer · Addition und Subtraktion von Brüchen · Klasse 6 <span>Offline-Lernspiel</span></footer>
+</main><dialog id="unlockDialog" aria-labelledby="unlockTitle"><form id="unlockForm"><h2 id="unlockTitle">Freischaltaufgabe</h2><p id="unlockWorld"></p><p>Löse diese Aufgabe, um die Welt freizuschalten.</p><div id="unlockEquation" class="task equation"></div><div class="answer-frac"><input id="unlockNum" type="number" inputmode="numeric" min="0" max="1000000" required placeholder="Zähler" aria-label="Zähler"><input id="unlockDen" type="number" inputmode="numeric" min="1" max="1000000" required placeholder="Nenner" aria-label="Nenner"></div><p id="unlockFeedback" role="status"></p><div class="bottom-actions"><button type="button" id="unlockCancel">Abbrechen</button><button class="primary" type="submit">Antwort prüfen</button></div></form></dialog>
+</body>
+</html>
