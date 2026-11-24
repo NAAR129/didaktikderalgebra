@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ef97ad">
+  <meta name="description" content="Lunas Kuchenfest: Brüche mit Kuchen entdecken. Plus, Minus und Mal mit beweglichen Stücken, Geschichten und Lernhilfen Schritt für Schritt.">
+  <title>Lunas Kuchenfest – spielend Brüche verstehen</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85'%3E🍰%3C/text%3E%3C/svg%3E">
+  <style>
+:root{color-scheme:light;font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;font-size:17px;color:#493e4c;--muted:#766b78;--line:#eee4e6;--cake-size:170px;line-height:1.5}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0,#f9dccd 0,transparent 50%),radial-gradient(ellipse at 95% 25%,#d7eee7 0,transparent 50%),#fff7ee;background-attachment:fixed}button,input{font:inherit}button{cursor:pointer;color:inherit;transition:background .15s,box-shadow .15s,transform .15s}button,a,input,[tabindex]{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid #487aaa;outline-offset:4px}button:disabled{cursor:default;opacity:.45}button:not(:disabled):active{transform:translateY(1px)}[hidden]{display:none!important}h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{line-height:1.2}h1{font-size:2.25rem;letter-spacing:-.035em;margin:0 0 4px}h2{font-size:1.8rem;letter-spacing:-.025em;margin:0 0 12px}h3{font-size:1.08rem;margin:0 0 7px}h4{font-size:1.05rem;margin:5px 0 9px}p{margin-bottom:12px}a{color:#655086;text-underline-offset:3px}
+.app-shell{width:min(1160px,100%);margin:auto;padding:32px 24px 22px}.app-header{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:23px}.brand{display:flex;align-items:center;gap:17px}.brand-cake{display:grid;place-items:center;width:88px;height:88px;flex-shrink:0;font-size:3rem;background:#fffcf5;border:2px solid #f6d8ca;border-radius:27px;transform:rotate(-7deg);box-shadow:0 5px 0 #ead8cb70}.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.15em;color:#a45970;margin:0 0 5px}.tagline{color:#7a6a72;margin:0;font-size:1rem}.basket-card{width:310px;flex-shrink:0;padding:13px 17px;background:#fffcf7d9;border:1px solid #e8ddd4;border-radius:20px;box-shadow:0 5px 18px #80685608}.basket-heading{display:flex;align-items:center;gap:7px;font-size:.85rem}.basket-heading>span:first-child{font-size:1.25rem}.basket-heading>span:last-child{margin-left:auto;background:#f5e3e8;color:#a54265;border-radius:999px;padding:2px 9px;font-size:.82rem;white-space:nowrap;font-weight:800}.basket-slots{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin:8px 0 6px}.basket-slot{height:23px;border-radius:7px;background:#efe6dc;font-size:.88rem;display:grid;place-items:center;color:#b7a697;border:1px solid #e3d8ce}.basket-slot.filled{background:#ffe3e8;border-color:#f3b6c9}.basket-slot.new{animation:little-pop .55s ease}.basket-card p{font-size:.82rem;color:var(--muted);margin:0;line-height:1.35}
+.main-nav{display:flex;align-items:center;gap:18px;justify-content:space-between;margin-bottom:17px}.main-tabs{display:flex;background:#ffffffa6;border:1px solid #e9ded7;border-radius:19px;padding:5px;gap:4px}.main-tabs button{border:0;background:transparent;padding:11px 18px;border-radius:14px;font-size:.94rem;font-weight:700;white-space:nowrap}.main-tabs button[aria-selected=true]{background:#fff;color:#a24768;box-shadow:0 3px 10px #6c4d4d13}.main-tabs button:hover{background:#fff6f8}.main-tabs button span{margin-right:5px}.read-button{display:flex;align-items:center;gap:7px;border:1px solid #d6d8c7;border-radius:13px;background:#fffdf6;min-height:45px;padding:9px 14px;font-size:.88rem;white-space:nowrap}.read-button[aria-pressed=true]{background:#e1f0f7}
+.board{position:relative;border:1px solid #f0e5de;border-radius:29px;background:#fffefc;padding:26px;box-shadow:0 12px 36px #a37b6d13}.game-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding-bottom:19px;margin-bottom:22px}.operation-buttons{display:flex;gap:9px}.operation-buttons button{display:flex;align-items:center;gap:8px;border:1px solid #e5dce1;border-radius:14px;background:#faf7fa;padding:8px 15px;font-weight:700;min-height:47px}.operation-sign{font-size:1.6rem;line-height:1;font-weight:700}.operation-buttons button[aria-pressed=true]{background:#fce5ed;border-color:#e7a6ba;color:#9d3a61;box-shadow:0 3px 0 #e8b2c230}.operation-buttons button[data-operation=minus][aria-pressed=true]{background:#e6effb;color:#3b6497;border-color:#adbedc}.operation-buttons button[data-operation=times][aria-pressed=true]{background:#eee8fb;color:#70539e;border-color:#c0afdc}.difficulty-control{display:flex;align-items:center;gap:9px;font-size:.82rem;color:#786e7b}.difficulty-control>div{display:flex;gap:3px;background:#f5f0ed;border-radius:12px;padding:4px}.difficulty-control button{border:0;background:transparent;border-radius:8px;padding:5px 10px;font-size:.82rem}.difficulty-control button[aria-pressed=true]{background:white;color:#664e75;box-shadow:0 1px 4px #6b536c16;font-weight:700}
+.story-scene{display:grid;grid-template-columns:1fr 260px;gap:30px;align-items:center;margin-bottom:21px}.chapter-label{font-size:.82rem;font-weight:800;color:#ae6574;letter-spacing:.035em;margin:0 0 8px}.story-copy>p:not(.chapter-label):not(.whole-note){max-width:650px;font-size:1rem;line-height:1.55}.story-copy .whole-note{color:var(--muted);font-size:.83rem;margin:0}.equation-card{align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff5e5;border:1px solid #f5e5c8;border-radius:21px;padding:17px 12px;gap:8px;min-height:154px}.equation-label{font-size:.82rem;color:#8b7057}.task-equation{display:flex;gap:12px;align-items:center;font-size:1.6rem;font-weight:700;line-height:1.15}.math-fraction{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;min-width:30px;line-height:1.25}.math-fraction span:first-child{padding:0 5px 3px;border-bottom:2px solid currentColor}.math-fraction span:last-child{padding:3px 5px 0}.level-description{font-size:.8rem;color:#8e7866;text-align:center}
+.playmat{background:#fcf6f0;border:1px solid #f0e5db;border-radius:23px;padding:17px 18px 12px}.workspace-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.workspace-heading h3{font-size:1rem}.workspace-heading p{font-size:.88rem;color:#786a69;margin:0}.touch-badge{background:#fff;border-radius:99px;font-size:.76rem;padding:4px 9px;white-space:nowrap;color:#9c795f}.piece-tools{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0 14px}.small-button{font-size:.82rem;min-height:34px;border:1px solid #dfd3ce;border-radius:10px;background:#fffdfb;padding:5px 10px}.small-button:not(:disabled):hover{background:#fce9ec}.workspace-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:18px;align-items:stretch}.source-cakes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:center}.source-cakes.single-source{grid-template-columns:1fr}.source-card{border:1px solid #eedde0;border-radius:18px;background:#fffdfb;padding:10px 7px;text-align:center;min-width:0}.source-card:nth-child(even){border-color:#dbe6ea}.source-name{font-size:.86rem;font-weight:700;margin:0 0 6px;color:#92546b}.source-card:nth-child(even) .source-name{color:#557e94}.source-amount{font-size:.87rem;color:#776c73;display:flex;align-items:center;justify-content:center;gap:9px}.source-amount .math-fraction{font-size:1rem;min-width:26px}.source-gallery{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0}.cake-graphic{width:var(--cake-size);height:auto;display:block;max-width:100%;overflow:visible;flex-shrink:0}.cake-piece{cursor:pointer;touch-action:none;outline:none}.cake-piece:hover .slice-fill{filter:brightness(1.06)}.cake-piece:focus-visible .slice-outline{stroke:#446ea3;stroke-width:3}.slice-outline{fill:none;stroke:transparent;stroke-width:3}.cake-piece.is-moved .slice-fill{opacity:.13}.cake-piece.is-moved .cake-decoration{opacity:.1}.target-zone{position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:13px 9px 10px;background:#f4f8ef;border:2px dashed #ccd8bc;border-radius:20px;min-height:254px;text-align:center;transition:background .2s,border-color .2s}.target-zone.drag-over{background:#e2f1d4;border-color:#7da063;box-shadow:0 0 0 4px #c3d5b030}.target-zone h3{font-size:.95rem;color:#5c724f}.target-label{font-size:.66rem;letter-spacing:.13em;color:#8b9c7c;font-weight:800;margin-bottom:5px}.target-cakes{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px;width:100%}.target-zone>p{font-size:.84rem;color:#6f7e62;margin:0;max-width:230px}.workspace-status{font-size:.84rem;min-height:1.5em;margin:10px 0 0;color:#796f70;text-align:center}
+.answer-area{margin-top:20px}.answer-area>h3{font-size:1.1rem;margin-bottom:11px}.answer-form{display:flex;align-items:center;gap:15px}.answer-fraction{display:inline-flex;flex-direction:column;width:86px;gap:4px;flex-shrink:0}.answer-fraction input{width:100%;text-align:center;min-height:37px;border:1.5px solid #d7a9b6;border-radius:10px;padding:4px 5px;background:#fffafc;color:#593b4c}.answer-fraction input::placeholder{font-size:.79rem;color:#a18591}.answer-fraction>span{height:2px;background:#ba8598;width:calc(100% - 8px);align-self:center}.primary-button{min-height:45px;background:#f3adc3;color:#5e2f44;border:1px solid #dc88a3;box-shadow:0 3px 0 #d986a15c;border-radius:13px;padding:10px 19px;font-size:.94rem;font-weight:800}.primary-button:not(:disabled):hover{background:#f8bfd1;box-shadow:0 4px 0 #d986a15c}.answer-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.answer-actions>span{font-size:.79rem;color:#8e7e88}.text-button{border:0;background:transparent;color:#786687;text-decoration:underline;text-underline-offset:4px;font-size:.84rem;padding:5px}.answer-form>.text-button{margin-left:auto}.answer-feedback{margin:14px 0 0;padding:12px 15px;border-radius:13px;font-size:.94rem;background:#fff2dd;color:#875b2d;border:1px solid #f0d9b5}.answer-feedback.correct{background:#e7f3e8;color:#3c714c;border-color:#c7dfc8}.answer-feedback.invalid{background:#fff1e8;color:#95563d}.solved-explanation{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;padding:15px;background:#f6fbf4;border-radius:14px}.solved-explanation p{margin:0;font-size:.9rem;flex-basis:100%}.solved-explanation #solved-equation{font-size:1.15rem;font-weight:800;color:#51794c;overflow-wrap:anywhere}.solved-explanation .primary-button{margin-top:3px}.mint-button{background:#cbe5cf;color:#365c3c;border-color:#a7caad;box-shadow:0 3px 0 #a7caad66}.mint-button:not(:disabled):hover{background:#d8efd9}
+.help-dock{margin-top:23px;border:1px solid #e5dced;background:#f7f3fc;border-radius:20px;padding:15px 18px}.help-heading{display:flex;align-items:center;gap:11px}.luna-avatar{display:grid;place-items:center;width:46px;height:46px;flex-shrink:0;font-size:1.65rem;background:#ffe5dc;border:2px solid white;border-radius:50%;box-shadow:0 2px 6px #b5868520}.help-heading h3{font-size:1rem;color:#76608e;margin:0 0 3px}.help-heading p{font-size:.82rem;color:#958299;margin:0}.hint-button{margin-left:auto;border:1px solid #ccbddb;background:#fff;border-radius:12px;padding:9px 13px;min-height:42px;color:#73598e;font-size:.86rem;font-weight:700}.hint-button:hover{background:#eee4f9}.hint-content{margin-top:15px;padding-top:13px;border-top:1px solid #e3d8ed}.hint-question{font-size:1rem;color:#735889;font-weight:700;margin-bottom:0}.hint-rule{margin-top:12px;background:#fffefb;border:1px solid #e5dfd0;padding:15px;border-radius:15px}.mini-label{font-size:.7rem;letter-spacing:.09em;color:#9d8a63;font-weight:800}.hint-rule p{margin-bottom:10px;font-size:.95rem}.hint-rule .text-button{padding-left:0}.rule-equation{font-size:1rem!important;font-weight:800;color:#725484;overflow-wrap:anywhere}.guided-help{margin-top:13px;padding:14px;background:#fff;border:1px solid #e6ddeb;border-radius:15px}.guided-help .mini-label{color:#a082b1}.guide-question{margin:6px 0 10px;font-weight:700;font-size:.96rem}.guide-options{display:flex;flex-wrap:wrap;gap:8px}.guide-options button{min-width:50px;min-height:43px;border:1px solid #d5c2e4;border-radius:11px;background:#f5edfc;font-weight:800}.guide-options button:hover{background:#e9dbf7}.guide-stage{font-size:.78rem;color:#9a83a5;margin:8px 0 0}.guided-help>p{font-size:.88rem;color:#8b7098;margin:8px 0 0}.basket-party{text-align:center;background:#fff3db;border:1px solid #f1d8a8;padding:20px;margin-top:20px;border-radius:20px}.basket-party>span{font-size:1.8rem}.basket-party h3{margin:8px 0}.basket-party p{margin:0;font-size:.95rem}
+.section-intro{max-width:750px;font-size:1rem;color:#7a6e77;margin-bottom:20px}.explore-layout{display:grid;grid-template-columns:250px 1fr;gap:20px;background:#fcf6f0;border:1px solid #f1e2d7;padding:20px;border-radius:22px}.explore-controls{text-align:center;padding:8px 18px 8px 0;border-right:2px dashed #e0bca4}.explore-controls h3{font-size:1rem}.explore-fraction{width:76px;display:flex;margin:12px auto 16px}.explore-fraction input{font-size:1.5rem;background:#fff;min-height:44px}.explore-quantity{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:16px}.explore-canvas{align-self:center;text-align:center;min-width:0}.explore-cakes{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-height:550px;overflow-y:auto}.explore-canvas>p{margin:8px 0;font-size:.94rem}.explore-tool-row{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 12px}.secondary-button{min-height:43px;border:1px solid #dacbd7;background:#fff7fa;border-radius:12px;padding:8px 13px;font-size:.9rem}.secondary-button:not(:disabled):hover{background:#f5e6ef}.explore-equivalence{font-size:1rem;background:#f4f1fa;padding:13px 16px;border-radius:12px;color:#79618d;margin-bottom:19px}.explore-notes{display:grid;grid-template-columns:1fr 1fr;gap:16px}.explore-notes>div{padding:16px;background:#fff6e7;border-radius:15px;font-size:.95rem}.explore-notes>div:last-child{background:#ebf5f1}.explore-notes p{margin:6px 0 0;color:#87745f}.explore-notes>div:last-child p{color:#6c8b7f}.form-error{font-size:.88rem;color:#ab4c4c;margin:10px 0 0}.legend{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px;color:#87777f;font-size:.82rem!important}.color-dot{width:12px;height:12px;border-radius:50%;display:inline-block;flex-shrink:0}.pink-dot{background:#f4a1b9;border:1px solid #dc799e}.empty-dot{background:#f0e4d7;border:1px solid #d0bda9;margin-left:9px}
+.rule-cards{display:grid;grid-template-columns:1fr 1fr;gap:17px}.rule-card{border:1px solid #e9e0ec;border-radius:20px;padding:20px;background:#faf7fd;scroll-margin-top:20px}.rule-card:nth-child(3n+2){background:#fff7ec;border-color:#efdfc5}.rule-card:nth-child(3n+3){background:#eff7f3;border-color:#dce9e0}.rule-card .rule-icon{display:grid;place-items:center;width:43px;height:43px;background:white;border-radius:13px;font-size:1.4rem;margin-bottom:12px}.rule-card h3{font-size:1.15rem;margin-bottom:10px}.rule-card p{font-size:.96rem;margin-bottom:12px}.rule-card .rule-equation{background:#ffffffa6;border-radius:11px;padding:10px 12px;line-height:1.7}.rule-actions{display:flex;align-items:center;gap:8px;justify-content:space-between}.rule-card.highlight{box-shadow:0 0 0 3px #c5acd9;animation:little-pop .35s ease}.rule-read{border:0;background:transparent;font-size:1.15rem;min-width:38px;min-height:38px;border-radius:10px}.rule-read:hover{background:#fff}.page-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:7px 20px;padding:19px 6px 0;color:#8b7c80;font-size:.8rem}.page-footer>span{color:#8d6d78}.page-footer p{margin:0}.page-footer a{color:#89768e}
+.drag-piece{position:fixed;top:0;left:0;z-index:1000;pointer-events:none;font-size:2rem;filter:drop-shadow(0 4px 5px #71534940);transform:translate(-50%,-50%)}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:min(550px,calc(100% - 28px));padding:13px 20px;background:#65516f;color:white;border-radius:15px;box-shadow:0 4px 20px #69506830;z-index:100;text-align:center;font-size:.94rem}.celebration{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:200}.confetti-bit{position:absolute;top:14%;font-size:1.55rem;animation:confetti-fall 1.5s ease-out forwards}.noscript-note{padding:20px;background:#fff3dc;margin:20px;border-radius:15px}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@keyframes little-pop{0%{transform:scale(.88)}60%{transform:scale(1.08)}100%{transform:scale(1)}}@keyframes confetti-fall{0%{transform:translateY(-20px) rotate(-20deg);opacity:0}15%{opacity:1}100%{transform:translateY(65vh) rotate(130deg);opacity:0}}
+@media(min-width:1400px){.app-shell{padding-top:42px}}
+@media(max-width:950px){:root{--cake-size:148px}.app-shell{padding:24px 18px}.app-header{gap:18px}.brand-cake{width:66px;height:66px;font-size:2.45rem;border-radius:20px}.brand{gap:12px}h1{font-size:1.95rem}.basket-card{width:275px;padding:12px 14px}.basket-heading{font-size:.8rem}.basket-slots{gap:2px}.basket-slot{font-size:.8rem;height:22px}.game-toolbar{gap:10px}.difficulty-control{flex-direction:column;align-items:flex-end;gap:5px}.difficulty-control>span{display:none}.board{padding:22px}.story-scene{grid-template-columns:1fr 220px;gap:20px}.workspace-grid{grid-template-columns:1.35fr 1fr;gap:13px}.source-cakes{gap:8px}.playmat{padding:16px 13px 12px}}
+@media(max-width:750px){.app-header{align-items:flex-start}.brand{align-items:center}.tagline{font-size:.88rem;max-width:220px}.basket-card{width:227px}.basket-heading strong{font-size:.76rem}.basket-heading>span:first-child{font-size:1rem}.basket-heading>span:last-child{font-size:.74rem;padding:2px 6px}.basket-slot{height:19px;font-size:.72rem}.basket-card p{font-size:.76rem}.eyebrow{font-size:.66rem}h1{font-size:1.7rem}.main-tabs button{padding:10px 12px;font-size:.86rem}.main-tabs button span{display:none}.read-button{font-size:.82rem;min-height:42px;padding:8px 11px}.main-nav{gap:9px}.game-toolbar{flex-wrap:wrap}.story-scene{grid-template-columns:1fr 185px;gap:14px}h2{font-size:1.6rem}.equation-card{padding:13px 9px;min-height:147px}.task-equation{font-size:1.4rem;gap:9px}.equation-label{font-size:.75rem}.workspace-grid{grid-template-columns:1fr}.source-cakes{grid-template-columns:repeat(2,minmax(0,1fr))}.source-cakes.single-source{grid-template-columns:1fr}.target-zone{min-height:230px}.touch-badge{display:none}.source-card{padding:10px}.help-heading{flex-wrap:wrap}.hint-button{margin-left:auto}.help-heading p{font-size:.8rem}.explore-layout{grid-template-columns:200px 1fr;gap:15px;padding:17px}.explore-controls{padding-right:12px}.rule-card{padding:17px}.page-footer{font-size:.76rem}}
+@media(max-width:540px){:root{font-size:16px;--cake-size:122px}.app-shell{padding:20px 10px}.app-header{display:block;margin-bottom:17px}.brand{gap:12px;margin:0 4px 17px}.brand-cake{width:64px;height:64px;font-size:2.4rem}h1{font-size:1.85rem}.eyebrow{font-size:.68rem}.tagline{font-size:.86rem;max-width:none}.basket-card{width:100%;padding:11px 13px;border-radius:16px}.basket-heading{font-size:.9rem}.basket-heading strong{font-size:.87rem}.basket-heading>span:first-child{font-size:1.2rem}.basket-heading>span:last-child{font-size:.82rem}.basket-slots{gap:4px;margin:7px 0}.basket-slot{height:23px;font-size:.92rem}.basket-card p{font-size:.8rem}.main-nav{align-items:stretch;gap:6px;margin-bottom:12px}.main-tabs{padding:4px;gap:1px;border-radius:14px;flex:1;justify-content:space-between}.main-tabs button{padding:8px 9px;font-size:.79rem;border-radius:10px;flex:1}.read-button{padding:8px;min-width:40px;justify-content:center;border-radius:12px}.read-button #read-label{display:none}.read-button>span:first-child{font-size:1rem}.board{border-radius:22px;padding:16px 13px}.game-toolbar{padding-bottom:14px;margin-bottom:18px;gap:12px}.operation-buttons{gap:7px;width:100%;justify-content:space-between}.operation-buttons button{flex:1;justify-content:center;padding:7px 11px;min-height:44px;font-size:.94rem}.operation-sign{font-size:1.5rem}.difficulty-control{width:100%;flex-direction:row;justify-content:space-between;align-items:center}.difficulty-control>span{display:inline;font-size:.84rem}.difficulty-control button{font-size:.83rem;padding:5px 11px}.story-scene{grid-template-columns:1fr;gap:13px;margin-bottom:16px}.chapter-label{font-size:.82rem}h2{font-size:1.6rem}.story-copy>p:not(.chapter-label):not(.whole-note){font-size:1rem;margin-bottom:10px}.equation-card{display:grid;grid-template-columns:1fr auto;gap:5px 9px;padding:13px 15px;min-height:auto;justify-items:start;border-radius:16px}.task-equation{grid-row:1/3;grid-column:2;font-size:1.42rem}.equation-label{font-size:.84rem}.level-description{font-size:.78rem;text-align:left}.playmat{padding:13px 10px 10px;border-radius:17px}.workspace-heading h3{font-size:1rem}.workspace-heading p{font-size:.9rem}.piece-tools{gap:5px;margin:11px 0}.small-button{padding:6px 8px;font-size:.8rem;min-height:35px}.workspace-grid{gap:11px}.source-cakes{gap:9px}.source-card{border-radius:14px;padding:8px 5px}.source-name{font-size:.84rem}.source-amount{font-size:.82rem;gap:6px}.source-amount .math-fraction{font-size:.88rem;min-width:22px}.target-zone{min-height:205px;border-radius:16px;padding:10px}.target-label{font-size:.65rem}.target-zone h3{font-size:.95rem}.target-zone>p{font-size:.87rem}.workspace-status{font-size:.84rem;margin-top:9px}.answer-area{margin-top:17px}.answer-area>h3{font-size:1.08rem}.answer-form{gap:12px;flex-wrap:wrap}.answer-fraction{width:75px}.answer-fraction input{min-height:39px}.answer-actions{flex:1;min-width:145px}.primary-button{font-size:.9rem;padding:10px 13px;min-height:46px}.answer-actions>.primary-button{width:100%}.answer-actions>span{font-size:.78rem}.answer-form>.text-button{margin-left:87px;margin-top:-3px;font-size:.85rem}.help-dock{padding:13px;margin-top:19px;border-radius:17px}.help-heading{gap:9px}.luna-avatar{width:40px;height:40px;font-size:1.45rem}.help-heading h3{font-size:1rem}.help-heading p{font-size:.8rem}.hint-button{width:100%;margin-top:4px;font-size:.94rem;padding:10px}.hint-rule,.guided-help{padding:12px}.hint-rule p{font-size:1rem}.rule-equation{font-size:1rem!important}.explore-layout{grid-template-columns:1fr;padding:16px 11px}.explore-controls{border:0;border-bottom:2px dashed #e0bca4;padding:0 0 16px}.explore-controls form{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;align-items:center;padding:0 14px}.explore-controls h3{grid-column:2;grid-row:1;margin:0;font-size:1rem;text-align:left}.explore-fraction{grid-column:1;grid-row:1/3;margin:0;width:72px}.explore-controls .primary-button{grid-column:2;grid-row:2}.explore-controls .form-error{grid-column:1/-1}.explore-quantity{margin-top:12px}.explore-canvas{padding-top:5px}.explore-tool-row{gap:8px}.explore-tool-row button{font-size:.88rem;padding:8px 10px}.explore-notes{grid-template-columns:1fr;gap:11px}.explore-notes>div{font-size:1rem}.explore-canvas>p{font-size:1rem}.rule-cards{grid-template-columns:1fr;gap:14px}.rule-card{padding:19px}.rule-card p{font-size:1rem}.rule-card h3{font-size:1.2rem}.page-footer{display:block;padding:18px 7px 0;text-align:center;font-size:.8rem}.page-footer p{margin-top:7px}.section-intro{font-size:1rem}.toast{font-size:.93rem;padding:12px 15px}.solved-explanation{padding:13px}.solved-explanation #solved-equation{font-size:1.05rem}}
+@media(max-width:359px){:root{--cake-size:102px}.main-tabs button{font-size:.75rem;padding:8px 6px}.brand{gap:9px}.brand-cake{width:53px;height:53px;font-size:2rem;border-radius:17px}h1{font-size:1.65rem}.tagline{font-size:.8rem}.basket-slots{gap:2px}.basket-slot{font-size:.83rem}.board{padding:15px 11px}.equation-card{padding:12px 10px}.task-equation{font-size:1.3rem}.equation-label{font-size:.78rem}.level-description{font-size:.73rem}.answer-actions{min-width:130px}.primary-button{font-size:.85rem}.source-card{padding:8px 4px}.difficulty-control button{padding:5px 10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.speech-notice{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:0 0 15px;padding:12px 15px;background:#fff4e1;border:1px solid #efdbb7;border-radius:14px}.speech-notice p{font-size:.9rem;margin:0}.speech-notice button{flex-shrink:0}.story-copy #task-title{scroll-margin-top:20px}.answer-fraction input[aria-invalid=true]{border-color:#b65062;box-shadow:0 0 0 2px #b6506218}
+@media(max-width:540px){.speech-notice{flex-direction:column;align-items:flex-start}.speech-notice p{font-size:1rem}.speech-notice button{max-width:100%;white-space:normal}}
+@media(max-width:540px){.main-nav{display:flex;flex-wrap:wrap;gap:6px}.main-tabs{flex:1 0 100%;width:100%;min-width:0}.main-tabs button{font-size:.875rem;padding:9px 5px;min-width:0}.read-button{min-height:35px;padding:6px 11px;width:100%;border-color:#e5dbd7;background:#ffffff90}.read-button #read-label{display:inline}.small-button{font-size:.875rem}.difficulty-control button{font-size:.875rem}}
+
+</style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand"><span class="brand-cake" aria-hidden="true">🍰</span><div><p class="eyebrow">KUCHEN UND BRÜCHE</p><h1>Lunas Kuchenfest</h1><p class="tagline">Ein Stück ausprobieren. Ein Stück verstehen.</p></div></div>
+      <aside class="basket-card" aria-label="Dein Lernfortschritt">
+        <div class="basket-heading"><span aria-hidden="true">🧺</span><strong>Dein Picknickkorb</strong><span id="basket-count">0 / 12</span></div>
+        <div id="basket-slots" class="basket-slots" aria-hidden="true"></div><p id="basket-description">Jede gelöste Aufgabe füllt deinen Korb.</p>
+      </aside>
+    </header>
+    <nav class="main-nav" aria-label="Kuchenwelt">
+      <div class="main-tabs" role="tablist" aria-label="Bereich auswählen">
+        <button id="play-tab" type="button" role="tab" aria-selected="true" aria-controls="play-panel" tabindex="0"><span aria-hidden="true">🎈</span> Kuchenfest</button>
+        <button id="explore-tab" type="button" role="tab" aria-selected="false" aria-controls="explore-panel" tabindex="-1"><span aria-hidden="true">🍓</span> Ausprobieren</button>
+        <button id="rules-tab" type="button" role="tab" aria-selected="false" aria-controls="rules-panel" tabindex="-1"><span aria-hidden="true">📖</span> Merkkarten</button>
+      </div>
+      <button id="read-aloud" class="read-button" type="button" aria-label="Aufgabe vorlesen"><span aria-hidden="true">🔊</span><span id="read-label">Vorlesen</span></button>
+    </nav>
+    <div id="speech-notice" class="speech-notice" hidden><p id="speech-status" role="status" aria-live="polite"></p><button id="retry-speech" class="small-button" type="button">Vorlesen erneut versuchen</button></div>
+    <main>
+      <section id="play-panel" class="board" role="tabpanel" aria-labelledby="play-tab">
+        <div class="game-toolbar">
+          <div class="operation-buttons" role="group" aria-label="Rechenart auswählen"><button type="button" data-operation="plus" aria-pressed="true"><span class="operation-sign" aria-hidden="true">+</span> Plus</button><button type="button" data-operation="minus" aria-pressed="false"><span class="operation-sign" aria-hidden="true">−</span> Minus</button><button type="button" data-operation="times" aria-pressed="false"><span class="operation-sign" aria-hidden="true">×</span> Mal</button></div>
+          <div class="difficulty-control"><span>Du wählst:</span><div role="group" aria-label="Schwierigkeit auswählen"><button type="button" data-level="1" aria-pressed="true">Start</button><button type="button" data-level="2" aria-pressed="false">Weiter</button><button type="button" data-level="3" aria-pressed="false">Knifflig</button></div></div>
+        </div>
+        <div class="story-scene">
+          <div class="story-copy"><p id="chapter-label" class="chapter-label">Nach dem Geburtstagsfest</p><h2 id="task-title" tabindex="-1">Ein Teller für alle</h2><p id="task-story"></p><p class="whole-note">Alle ganzen Kuchen sind gleich groß.</p></div>
+          <div class="equation-card"><span class="equation-label">Deine Kuchenaufgabe</span><div id="task-equation" class="task-equation"></div><span id="level-description" class="level-description">Gleich große Stücke</span></div>
+        </div>
+        <div class="playmat">
+          <div class="workspace-heading"><div><h3>Dein Kuchentisch</h3><p id="workspace-instruction"></p></div><span class="touch-badge" aria-hidden="true">✋ Zum Anfassen</span></div>
+          <div class="piece-tools"><button id="cut-pieces" class="small-button" type="button" hidden>Gleich groß schneiden</button><button id="undo-pieces" class="small-button" type="button" disabled>Rückgängig</button><button id="reset-pieces" class="small-button" type="button" disabled>Stücke zurücklegen</button></div>
+          <div class="workspace-grid"><div id="source-cakes" class="source-cakes"></div><div id="target-zone" class="target-zone" role="region" aria-labelledby="target-title"><span class="target-label" aria-hidden="true">PICKNICKZEIT</span><h3 id="target-title">Unser Picknickteller</h3><div id="target-cakes" class="target-cakes"></div><p id="target-description">Hier kommen die Kuchenstücke hin.</p></div></div>
+          <p id="workspace-status" class="workspace-status" aria-live="polite" aria-atomic="true">Tippe ein Stück an. Du kannst es auch mit dem Finger ziehen.</p>
+        </div>
+        <div class="answer-area">
+          <h3 id="task-question">Wie viel Kuchen haben Luna und Max zusammen?</h3>
+          <form id="answer-form" class="answer-form" novalidate>
+            <div class="answer-fraction"><label class="sr-only" for="answer-numerator">Zähler der Antwort</label><input id="answer-numerator" type="number" inputmode="numeric" min="0" max="10000" step="1" placeholder="Zähler" required aria-describedby="answer-format"><span aria-hidden="true"></span><label class="sr-only" for="answer-denominator">Nenner der Antwort</label><input id="answer-denominator" type="number" inputmode="numeric" min="1" max="10000" step="1" placeholder="Nenner" required aria-describedby="answer-format"></div>
+            <div class="answer-actions"><button id="check-answer" class="primary-button" type="submit">Meine Antwort prüfen</button><span id="answer-format">Auch gleichwertige Brüche zählen.</span></div><button id="skip-task" class="text-button" type="button">Andere Aufgabe</button>
+          </form>
+          <div id="answer-feedback" class="answer-feedback" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+          <div id="solved-explanation" class="solved-explanation" hidden><p id="solved-equation"></p><p id="solved-message"></p><button id="next-task" class="primary-button mint-button" type="button">Weiter feiern</button></div>
+        </div>
+        <aside class="help-dock" aria-labelledby="help-title">
+          <div class="help-heading"><span class="luna-avatar" aria-hidden="true">👩‍🍳</span><div><h3 id="help-title">Luna hilft dir</h3><p>Wir finden es zusammen heraus.</p></div><button id="hint-button" class="hint-button" type="button">💡 Ich brauche einen Tipp</button></div>
+          <div id="hint-content" class="hint-content" hidden><p id="hint-question" class="hint-question"></p><div id="hint-rule" class="hint-rule" hidden><span class="mini-label">DEINE MERKREGEL</span><h4 id="hint-rule-title"></h4><p id="hint-rule-copy"></p><p id="hint-rule-example" class="rule-equation"></p><button id="open-relevant-rule" class="text-button" type="button">Diese Merkkarte öffnen</button></div><div id="guided-help" class="guided-help" hidden><span class="mini-label">SCHRITT FÜR SCHRITT</span><div id="guided-content"></div><p id="guided-feedback" role="status" aria-live="polite"></p><button id="replay-demonstration" class="small-button" type="button" hidden>Noch einmal zeigen</button></div></div>
+        </aside>
+        <div id="basket-party" class="basket-party" hidden><span aria-hidden="true">🎉 🧺 🍓</span><h3>Der Picknickkorb ist voll!</h3><p>Luna und Max sind bereit fürs Picknick. Du kannst weiter Kuchenaufgaben entdecken.</p></div>
+      </section>
+      <section id="explore-panel" class="board explore-board" role="tabpanel" aria-labelledby="explore-tab" hidden>
+        <p class="chapter-label">Die kleine Kuchenwerkstatt</p><h2>Was passiert, wenn du Kuchen teilst?</h2><p class="section-intro">Stelle einen Bruch ein. Tippe Stücke an und schneide sie kleiner. Die Kuchenmenge kannst du selbst verändern.</p>
+        <div class="explore-layout"><div class="explore-controls"><form id="explore-form" novalidate><h3>Dein Bruch</h3><div class="answer-fraction explore-fraction"><label class="sr-only" for="explore-numerator">Zähler: vorhandene Stücke</label><input id="explore-numerator" type="number" inputmode="numeric" min="0" max="24" step="1" value="5" required><span aria-hidden="true"></span><label class="sr-only" for="explore-denominator">Nenner: Stücke pro ganzem Kuchen</label><input id="explore-denominator" type="number" inputmode="numeric" min="1" max="24" step="1" value="8" required></div><button class="primary-button" type="submit">Kuchen anzeigen</button><p id="explore-error" class="form-error" role="alert" hidden></p></form><div class="explore-quantity"><button id="explore-less" class="small-button" type="button">Ein Stück weniger</button><button id="explore-more" class="small-button" type="button">Ein Stück dazu</button></div></div><div class="explore-canvas"><div id="explore-cakes" class="explore-cakes"></div><p id="explore-description" aria-live="polite"></p><p class="legend"><span class="color-dot pink-dot"></span> vorhanden <span class="color-dot empty-dot"></span> schon gegessen</p></div></div>
+        <div class="explore-tool-row"><button id="explore-cut" class="secondary-button" type="button">✂️ Feiner schneiden</button><button id="explore-simplify" class="secondary-button" type="button">Stücke zusammenfassen</button><button id="explore-undo" class="secondary-button" type="button" disabled>Rückgängig</button></div><p id="explore-equivalence" class="explore-equivalence" role="status" aria-live="polite">Beim feineren Schneiden bleibt die Kuchenmenge gleich.</p>
+        <div class="explore-notes"><div><strong>Der Zähler zählt die Stücke.</strong><p>Er steht oben und sagt, wie viele Stücke du hast.</p></div><div><strong>Der Nenner nennt die Einteilung.</strong><p>Er steht unten und sagt, wie viele gleich große Stücke einen ganzen Kuchen ergeben.</p></div></div>
+      </section>
+      <section id="rules-panel" class="board" role="tabpanel" aria-labelledby="rules-tab" hidden><p class="chapter-label">Dein kleines Kuchenbuch</p><h2>Merkkarten zum Nachschauen</h2><p class="section-intro">Eine Idee pro Karte. Schau dir ein Beispiel an und probiere es selbst aus.</p><div id="rule-cards" class="rule-cards"></div></section>
+    </main>
+    <footer class="page-footer"><span>🍰 Mit jedem Stück ein bisschen schlauer.</span><p>Grundidee: <a href="https://naar129.github.io/pizzen-/" target="_blank" rel="noopener noreferrer">„Pizzen und Brüche“</a> von Nicolás Alarcón-Relmucao</p></footer>
+    <noscript><div class="noscript-note">Bitte aktiviere JavaScript, damit du mit den Kuchenstücken spielen kannst.</div></noscript>
+  </div>
+  <div id="drag-piece" class="drag-piece" aria-hidden="true" hidden>🍰</div><div id="toast" class="toast" role="status" aria-live="polite" hidden></div><div id="celebration" class="celebration" aria-hidden="true"></div>
+<script>
+/* Reine Rechen- und Lernlogik, gemeinsam für Browser und Prüfungen. */
+(function (root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.CakeLearning = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+
+  const OPERATIONS = ['plus', 'minus', 'times'];
+  const BANKS = {
+    plus: {
+      1: [[[2,8],[3,8]], [[1,4],[2,4]], [[1,6],[3,6]], [[2,6],[3,6]], [[1,8],[3,8]], [[3,8],[4,8]]],
+      2: [[[1,2],[1,4]], [[1,6],[1,3]], [[1,4],[3,8]], [[1,3],[1,4]], [[2,3],[1,6]], [[1,2],[3,8]]],
+      3: [[[5,8],[6,8]], [[3,4],[2,3]], [[4,6],[5,6]], [[3,4],[5,8]], [[5,6],[1,2]], [[7,8],[3,4]]]
+    },
+    minus: {
+      1: [[[5,8],[2,8]], [[3,4],[1,4]], [[5,6],[2,6]], [[7,8],[3,8]], [[4,6],[1,6]], [[2,4],[2,4]]],
+      2: [[[3,4],[1,2]], [[5,6],[1,3]], [[7,8],[1,4]], [[2,3],[1,6]], [[3,4],[1,3]], [[5,6],[1,2]]],
+      3: [[[11,8],[3,8]], [[7,4],[2,3]], [[3,2],[3,4]], [[8,6],[1,2]], [[5,4],[7,8]], [[9,8],[1,4]]]
+    },
+    times: {
+      1: [[3,[1,8]], [2,[1,4]], [3,[1,6]], [2,[2,8]], [4,[1,8]], [2,[1,3]]],
+      2: [[3,[3,8]], [4,[2,6]], [3,[2,4]], [2,[5,8]], [4,[3,8]], [3,[3,6]]],
+      3: [[[1,2],[3,4]], [[2,3],[3,4]], [[1,2],[2,3]], [[3,4],[2,3]], [[2,3],[1,2]], [[1,3],[3,4]]]
+    }
+  };
+
+  function gcd(a, b) {
+    a = Math.abs(a); b = Math.abs(b);
+    while (b) [a, b] = [b, a % b];
+    return a || 1;
+  }
+  function lcm(a, b) { return a / gcd(a,b) * b; }
+  function reduce(n, d) { const g = gcd(n,d); return [n/g, d/g]; }
+  function f(value) { return value.join('/'); }
+  function equivalent(n, d, a, b) {
+    return [n,d,a,b].every(Number.isSafeInteger) && n >= 0 && a >= 0 && d > 0 && b > 0 && n*b === a*d;
+  }
+  function signature(task) { return JSON.stringify([task.op, task.level, task.a, task.b]); }
+
+  function makeTask(op, level, random = Math.random, previous = '') {
+    if (!OPERATIONS.includes(op)) op = 'plus';
+    level = Math.max(1, Math.min(3, Math.trunc(level) || 1));
+    const bank = BANKS[op][level];
+    let index = Math.min(bank.length-1, Math.max(0, Math.floor(random()*bank.length)));
+    let item = bank[index];
+    let task = {op, level, a: typeof item[0] === 'number' ? item[0] : [...item[0]], b:[...item[1]]};
+    if (signature(task) === previous) {
+      index = (index+1) % bank.length;
+      item = bank[index];
+      task = {op, level, a: typeof item[0] === 'number' ? item[0] : [...item[0]], b:[...item[1]]};
+    }
+    return task;
+  }
+
+  function validTask(task) {
+    if (!task || !OPERATIONS.includes(task.op) || ![1,2,3].includes(task.level)) return false;
+    return BANKS[task.op][task.level].some(item =>
+      JSON.stringify([item[0],item[1]]) === JSON.stringify([task.a,task.b]));
+  }
+
+  function calculate(task) {
+    let n, d;
+    if (task.op === 'times') {
+      if (typeof task.a === 'number') { n = task.a*task.b[0]; d = task.b[1]; }
+      else { n = task.a[0]*task.b[0]; d = task.a[1]*task.b[1]; }
+    } else {
+      d = lcm(task.a[1],task.b[1]);
+      const a = task.a[0]*(d/task.a[1]);
+      const b = task.b[0]*(d/task.b[1]);
+      n = task.op === 'plus' ? a+b : a-b;
+    }
+    const simplified = reduce(n,d);
+    return {n, d, simplified};
+  }
+
+  function specification(task) {
+    const result = calculate(task);
+    const d = result.d;
+    let sources;
+    if (task.op === 'times' && typeof task.a === 'number') {
+      sources = Array.from({length:task.a}, (_,i)=>({id:`plate${i}`, name:`Teller ${i+1}`, n:task.b[0], d:task.b[1], units:task.b[0]}));
+    } else if (task.op === 'times') {
+      sources = [{id:'luna', name:'Lunas Kuchenrest', n:task.b[0], d:task.b[1], units:task.b[0]*task.a[1]}];
+    } else {
+      sources = [{id:'luna', name:task.op==='minus'?'Lunas Kuchen':'Lunas Teller', n:task.a[0], d:task.a[1], units:task.a[0]*(d/task.a[1])}];
+      if(task.op==='plus') sources.push({id:'max',name:'Max’ Teller',n:task.b[0],d:task.b[1],units:task.b[0]*(d/task.b[1])});
+    }
+    const all = sources.flatMap(s=>Array.from({length:s.units},(_,i)=>`${s.id}:${i}`));
+    let correctKeys = all;
+    if (task.op==='minus') correctKeys = all.slice(0,task.b[0]*(d/task.b[1]));
+    if (task.op==='times' && typeof task.a !== 'number') correctKeys = all.filter(key=>Number(key.split(':')[1])%task.a[1] < task.a[0]);
+    return {d, sources, all, correctKeys, result, canCut:sources.some(s=>s.d!==d)};
+  }
+
+  function equation(task) {
+    const result = calculate(task);
+    let start, middle = '';
+    if(task.op==='times') start = `${typeof task.a==='number'?task.a:f(task.a)} × ${f(task.b)}`;
+    else {
+      const sign = task.op==='plus' ? '+' : '−';
+      start = `${f(task.a)} ${sign} ${f(task.b)}`;
+      if(task.a[1]!==task.b[1]) middle = ` = ${task.a[0]*(result.d/task.a[1])}/${result.d} ${sign} ${task.b[0]*(result.d/task.b[1])}/${result.d}`;
+    }
+    return `${start}${middle} = ${result.n}/${result.d}${result.simplified[1]!==result.d?` = ${f(result.simplified)}`:''}`;
+  }
+
+  function diagnose(task,n,d) {
+    const answer = calculate(task);
+    if(equivalent(n,d,answer.n,answer.d)) return null;
+    if(task.op==='plus' && n===task.a[0]+task.b[0] && d===task.a[1]+task.b[1]) return 'added-denominators';
+    if(task.op==='minus' && task.a[1]===task.b[1] && n===task.a[0]+task.b[0] && d===task.a[1]) return 'added-instead';
+    if(task.op==='times' && typeof task.a==='number' && n===task.a+task.b[0] && d===task.b[1]) return 'times-as-plus';
+    if(task.op==='times' && typeof task.a!=='number' && n===task.a[0]+task.b[0] && d===task.a[1]+task.b[1]) return 'times-as-plus';
+    if(task.op!=='times' && task.a[1]!==task.b[1] && n===(task.op==='plus'?task.a[0]+task.b[0]:task.a[0]-task.b[0])) return 'unequal-pieces';
+    if(n===answer.n && d!==answer.d) return 'denominator';
+    if(task.op==='times' && typeof task.a!=='number' && n*task.b[1] >= task.b[0]*d) return 'part-too-large';
+    return 'count';
+  }
+
+  function help(task, errorKind='count') {
+    const spec=specification(task);
+    const common = task.op!=='times' && task.a[1]!==task.b[1];
+    let title, question, rule, example, ruleId, feedback;
+    if(task.op==='plus') {
+      title = common ? 'Erst gleich groß schneiden' : 'Die Stückgröße bleibt gleich';
+      question = common ? 'Sind die Stücke auf beiden Tellern gleich groß?' : 'Werden die Stücke beim Zusammenlegen kleiner?';
+      rule = common ? 'Schneide beide ganzen Kuchen zuerst in gleich viele Teile. Dann addierst du die Zähler. Der gemeinsame Nenner bleibt gleich.' : 'Addiere die Zähler. Der gemeinsame Nenner bleibt gleich, weil die Stücke gleich groß bleiben.';
+      example = common ? '1/2 + 1/4 = 2/4 + 1/4 = 3/4' : '1/6 + 2/6 = 3/6';
+      ruleId = common ? 'equal-pieces' : 'plus-rule';
+      feedback = errorKind==='added-denominators' && !common
+        ? 'Die Anzahl der Stücke hast du richtig gezählt! Schau jetzt auf ihre Größe: Der Nenner bleibt gleich.'
+        : errorKind==='added-denominators' ? 'Beim Zusammenlegen addierst du die Nenner nicht. Schau zuerst, ob die Stücke gleich groß sind.'
+        : errorKind==='denominator' ? 'Die Stückzahl passt schon. Prüfe noch, in wie viele gleich große Teile ein ganzer Kuchen geschnitten ist.'
+        : 'Schau dir die Kuchenstücke noch einmal an. Du kannst sie auf den gemeinsamen Teller legen.';
+    } else if(task.op==='minus') {
+      title = common ? 'Gleich groß schneiden, dann wegnehmen' : 'Minus heißt wegnehmen';
+      question = common ? 'Kannst du die Kuchenstücke zuerst gleich groß machen?' : 'Werden bei Minus Stücke mehr oder weniger?';
+      rule = common ? 'Schneide zuerst gleich große Stücke. Ziehe dann die Zähler voneinander ab. Der gemeinsame Nenner bleibt gleich.' : 'Ziehe die Zähler voneinander ab. Der gemeinsame Nenner bleibt gleich: Du nimmst Stücke weg, ihre Größe ändert sich nicht.';
+      example = common ? '3/4 − 1/2 = 3/4 − 2/4 = 1/4' : '5/8 − 2/8 = 3/8';
+      ruleId = common ? 'equal-pieces' : 'minus-rule';
+      feedback = errorKind==='added-instead' ? 'Bei dieser Aufgabe werden Stücke weggegeben. Nimm sie vom Kuchen weg und schau, was übrig bleibt.' : errorKind==='denominator' ? 'Die Stückzahl passt schon. Die Größe der Stücke bleibt beim Wegnehmen gleich.' : 'Nimm die Stücke für die Gäste weg. Welcher Teil des Kuchens bleibt dann übrig?';
+    } else if(typeof task.a==='number') {
+      title='Mal heißt mehrmals';
+      question='Wie viele Teller gibt es? Wie viel liegt auf jedem Teller?';
+      rule='Nimm den gleichen Bruch mehrmals. Multipliziere die ganze Zahl mit dem Zähler. Der Nenner bleibt gleich.';
+      example='3 × 1/8 = 1/8 + 1/8 + 1/8 = 3/8';
+      ruleId='times-rule';
+      feedback=errorKind==='times-as-plus' ? 'Die ganze Zahl sagt, wie oft du den Bruch nimmst. Lege die Stücke von jedem Teller zusammen.' : 'Auf jedem Teller liegt die gleiche Menge. Zähle die Stücke aller Teller zusammen.';
+    } else {
+      title='Ein Teil von einem Teil';
+      question='Du nimmst nur einen Teil des Kuchenrests. Muss dein Ergebnis kleiner als der ganze Rest sein?';
+      rule='Teile jedes vorhandene Stück noch einmal und wähle den gesuchten Anteil. Beim Rechnen gilt: Zähler mal Zähler, Nenner mal Nenner.';
+      example='1/2 × 3/4 = 3/8';
+      ruleId='part-rule';
+      feedback=errorKind==='part-too-large' ? 'Max bekommt nur einen Teil von Lunas Rest. Sein Anteil muss kleiner als dieser Rest sein.' : errorKind==='denominator' ? 'Der Zähler passt schon. Die Stücke werden noch einmal geteilt: Multipliziere auch die Nenner.' : 'Teile jedes übrige Stück noch einmal. Wähle dann von jedem Stück den gesuchten Anteil.';
+    }
+    return {title,question,rule,example,ruleId,feedback,denominator:spec.d};
+  }
+
+  function choices(correct) {
+    return [...new Set([Math.max(0,correct-1),correct,correct+1])].sort((a,b)=>a-b);
+  }
+  function guide(task) {
+    const spec=specification(task);
+    let first, second;
+    if(task.op==='times' && typeof task.a==='number') {
+      first={question:'Wie viele Teller gibt es?',correct:task.a,note:'Die ganze Zahl vor dem Malzeichen zählt die Teller.'};
+      second={question:'Wie viele Stücke liegen auf jedem Teller?',correct:task.b[0],note:'Zähle die rosa Stücke auf einem Teller.'};
+    } else if(task.op==='times') {
+      first={question:'In wie viele kleine Teile teilen wir jedes vorhandene Stück?',correct:task.a[1],note:'Der Nenner des ersten Bruchs sagt dir, wie fein du jedes Stück teilst.'};
+      second={question:'Wie viele dieser kleinen Teile nehmen wir von jedem vorhandenen Stück?',correct:task.a[0],note:'Der Zähler des ersten Bruchs sagt dir, wie viele Teile du jeweils nimmst.'};
+    } else {
+      first=spec.canCut ? {question:'In wie viele gleich große Teile schneiden wir jeden ganzen Kuchen?',correct:spec.d,note:'Wir suchen eine Einteilung, in die beide bisherigen Stückgrößen passen.'}
+        : {question:'Wie viele Stücke hat Luna am Anfang?',correct:spec.sources[0].units,note:'Zähle Lunas vorhandene Kuchenstücke.'};
+      second={question:task.op==='plus'?'Wie viele dieser gleich großen Stücke kommen von Max dazu?':'Wie viele dieser gleich großen Stücke bekommen die Gäste?',correct:task.b[0]*(spec.d/task.b[1]),note:spec.canCut?`Ein ganzer Kuchen hat jetzt ${spec.d} gleich große Stücke. Zähle in dieser Einteilung.`:'Schau auf den Zähler des zweiten Bruchs.'};
+    }
+    return [first,second].map(step=>({...step,choices:choices(step.correct)}));
+  }
+
+  function freshProgress() {
+    return {total:0,byOp:Object.fromEntries(OPERATIONS.map(op=>[op,{level:1,solved:0,streak:0,practice:false}]))};
+  }
+
+  function recordSuccess(progress,task,wrongAttempts,usedHelp) {
+    const next=JSON.parse(JSON.stringify(progress));
+    const skill=next.byOp[task.op];
+    next.total+=1; skill.solved+=1;
+    if(wrongAttempts>=3) {
+      skill.level=Math.max(1,task.level-1); skill.streak=0; skill.practice=true;
+    } else if(wrongAttempts===0 && !usedHelp) {
+      skill.streak+=1; skill.practice=false;
+      if(skill.streak>=2) { skill.level=Math.min(3,task.level+1); skill.streak=0; }
+    } else { skill.streak=0; skill.practice=false; }
+    return next;
+  }
+
+  function story(task) {
+    if(task.op==='plus') return {chapter:'Nach dem Geburtstagsfest',title:'Ein Teller für alle',text:`Luna hat noch ${f(task.a)} eines Kuchens. Max hat noch ${f(task.b)} eines gleich großen Kuchens. Sie legen ihre Reste für das Picknick zusammen.`,question:'Wie viel Kuchen haben Luna und Max zusammen?',instruction:'Tippe die Kuchenstücke an oder ziehe sie auf den gemeinsamen Teller.',target:'Unser Picknickteller'};
+    if(task.op==='minus') return {chapter:'Ein Besuch am Kuchentisch',title:'Noch ein Stück für die Gäste',text:`Auf Lunas Teller liegen ${f(task.a)} eines Kuchens. Für die Gäste gibt sie ${f(task.b)} eines ganzen Kuchens ab. Den Rest möchte sie einpacken.`,question:'Wie viel Kuchen bleibt für Luna übrig?',instruction:'Tippe Stücke an oder ziehe sie zu den Gästen. Schau, was bei Luna bleibt.',target:'Für unsere Gäste'};
+    if(typeof task.a==='number') return {chapter:'Wir packen das Picknick ein',title:'Auf jedem Teller das Gleiche',text:`Max stellt ${task.a} Teller bereit. Auf jedem Teller liegen ${f(task.b)} eines Kuchens. Jetzt kommt alles auf einen großen Picknickteller.`,question:'Wie viel Kuchen liegt auf allen Tellern zusammen?',instruction:'Lege die Stücke von allen Tellern auf den großen Picknickteller.',target:'Unser großer Teller'};
+    return {chapter:'Ein fairer Anteil für Max',title:'Ein Teil vom Kuchenrest',text:`Luna hat noch ${f(task.b)} eines Kuchens. Max bekommt ${f(task.a)} davon. Dafür teilen die beiden jedes übrige Stück noch einmal.`,question:'Welchen Bruchteil eines ganzen Kuchens bekommt Max?',instruction:`Teile jedes vorhandene Stück in ${task.a[1]} Teile. Wähle davon jeweils ${task.a[0]} für Max.`,target:'Max’ Anteil'};
+  }
+
+  return {OPERATIONS,BANKS,gcd,lcm,reduce,equivalent,makeTask,validTask,signature,calculate,specification,equation,diagnose,help,guide,freshProgress,recordSuccess,story};
+});
+
+</script>
+<script>
+(() => {
+  'use strict';
+  const C = window.CakeLearning;
+  const $ = id => document.getElementById(id);
+  const STORAGE_KEY = 'lunas-kuchenfest-v3';
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const RULES = [
+    {id:'fraction-rule',icon:'🍰',title:'Was sagt ein Bruch?',text:'Der Zähler oben zählt die vorhandenen Stücke. Der Nenner unten nennt die Anzahl gleich großer Stücke eines ganzen Kuchens.',example:'3/8: Drei von acht gleich großen Stücken.',view:'explore'},
+    {id:'plus-rule',icon:'+',title:'Stücke zusammenlegen',text:'Sind die Stücke gleich groß? Dann addierst du die Zähler. Der gemeinsame Nenner bleibt gleich.',example:'2/8 + 3/8 = 5/8',op:'plus',level:1},
+    {id:'minus-rule',icon:'−',title:'Stücke wegnehmen',text:'Ziehe die Zähler voneinander ab. Der gemeinsame Nenner bleibt gleich: Du nimmst Stücke weg, ihre Größe ändert sich nicht.',example:'5/8 − 2/8 = 3/8',op:'minus',level:1},
+    {id:'equal-pieces',icon:'✂️',title:'Erst gleich groß schneiden',text:'Bei Plus und Minus müssen die Stücke gleich groß sein. Schneide jeden ganzen Kuchen in gleich viele Teile. Rechne danach mit den Zählern.',example:'1/2 + 1/4 = 2/4 + 1/4 = 3/4',op:'plus',level:2},
+    {id:'times-rule',icon:'×',title:'Mal heißt mehrmals',text:'Nimm die gleiche Menge mehrmals. Multipliziere die ganze Zahl mit dem Zähler. Der Nenner bleibt gleich.',example:'3 × 1/8 = 1/8 + 1/8 + 1/8 = 3/8',op:'times',level:1},
+    {id:'part-rule',icon:'🍓',title:'Ein Teil von einem Teil',text:'Teile jedes vorhandene Stück noch einmal. Nimm dann jeweils den gesuchten Anteil. Beim Rechnen: Zähler mal Zähler, Nenner mal Nenner.',example:'1/2 × 3/4 = 3/8',op:'times',level:3},
+    {id:'same-amount',icon:'⚖️',title:'Anderer Bruch, gleiche Menge',text:'Wenn du jedes Stück gleich oft teilst, ändert sich die Kuchenmenge nicht. Zähler und Nenner werden mit derselben Zahl multipliziert. Beim Kürzen teilst du beide durch dieselbe Zahl.',example:'1/2 = 2/4 = 4/8',view:'explore'}
+  ];
+
+  const state = loadState();
+  const ui = {view:'play',selected:new Set(),normalized:false,history:[],animating:false,animationId:0,timer:null,toastTimer:null,speaking:false,drag:null,suppressClick:0};
+  const explorer = {d:8,selected:new Set([0,1,2,3,4]),history:[]};
+
+  function integer(value,min,max,fallback) {
+    return Number.isSafeInteger(value) && value>=min && value<=max ? value : fallback;
+  }
+  function loadState() {
+    const clean={op:'plus',progress:C.freshProgress(),records:{}};
+    try {
+      const saved=JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if(!saved || saved.version!==3) return clean;
+      if(C.OPERATIONS.includes(saved.op)) clean.op=saved.op;
+      for(const op of C.OPERATIONS) {
+        const old=saved.progress?.byOp?.[op];
+        if(old) clean.progress.byOp[op]={level:integer(old.level,1,3,1),solved:integer(old.solved,0,100000,0),streak:integer(old.streak,0,1,0),practice:old.practice===true};
+        const rec=saved.records?.[op];
+        if(rec && C.validTask(rec.task) && rec.task.op===op) {
+          const answer=Array.isArray(rec.answer) && rec.answer.length===2 && rec.answer.every(Number.isSafeInteger) ? rec.answer : null;
+          const expected=C.calculate(rec.task);
+          const draft=Array.isArray(rec.draft) && rec.draft.length===2 ? rec.draft.map(value=>typeof value==='string'?value.slice(0,32):'') : null;
+          clean.records[op]={task:rec.task,attempts:integer(rec.attempts,0,1000,0),hints:integer(rec.hints,0,3,0),guideStep:integer(rec.guideStep,0,2,0),errorKind:typeof rec.errorKind==='string'?rec.errorKind:'count',answer,draft,solved:rec.solved===true && answer!==null && C.equivalent(...answer,expected.n,expected.d)};
+        }
+      }
+      clean.progress.total=C.OPERATIONS.reduce((sum,op)=>sum+clean.progress.byOp[op].solved,0);
+    } catch { /* Spielen funktioniert auch ohne lokalen Speicher. */ }
+    return clean;
+  }
+  function save() {
+    try {localStorage.setItem(STORAGE_KEY,JSON.stringify({version:3,...state}));} catch { /* Nur der Fortschritt zwischen Besuchen entfällt. */ }
+  }
+  function record() {
+    if(!state.records[state.op]) state.records[state.op]=newRecord(C.makeTask(state.op,state.progress.byOp[state.op].level,()=>0));
+    return state.records[state.op];
+  }
+  function newRecord(task) {return {task,attempts:0,hints:0,guideStep:0,errorKind:'count',solved:false,answer:null,draft:null};}
+  function currentSpec() {return C.specification(record().task);}
+  function escapeText(text) {return String(text).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
+  function fractionHTML(n,d) {return `<span class="math-fraction" role="img" aria-label="${n} von ${d} Teilen"><span aria-hidden="true">${n}</span><span aria-hidden="true">${d}</span></span>`;}
+  function readInput(id,min,max) {
+    const input=$(id); const n=input.valueAsNumber;
+    return input.value.trim()!=='' && Number.isSafeInteger(n) && n>=min && n<=max ? n : null;
+  }
+  function point(radius,angle) {const a=angle*Math.PI/180;return [100+radius*Math.cos(a),100+radius*Math.sin(a)];}
+  function wedge(radius,start,end) {
+    const p=point(radius,start),q=point(radius,end);
+    return `M 100 100 L ${p[0]} ${p[1]} A ${radius} ${radius} 0 ${end-start>180?1:0} 1 ${q[0]} ${q[1]} Z`;
+  }
+  function shape(d,index,radius,attributes) {
+    return d===1 ? `<circle cx="100" cy="100" r="${radius}" ${attributes}/>` : `<path d="${wedge(radius,-90+index*360/d,-90+(index+1)*360/d)}" ${attributes}/>`;
+  }
+  function strawberry(angle,d) {
+    const [x,y]=point(48,angle),[cx,cy]=point(25,angle);
+    return `<g class="cake-decoration" pointer-events="none"><g transform="translate(${x} ${y}) rotate(${angle+90}) scale(${d>12?.6:.9})"><path d="M 0 -5 C -11 -13 -14 1 0 12 C 14 1 11 -13 0 -5 Z" fill="#d54569" stroke="#b52b50" stroke-width="1"/><path d="M 0 -5 L -6 -10 L -2 -9 L 0 -13 L 2 -9 L 6 -10 Z" fill="#65966a"/><g fill="#ffedae"><ellipse cx="-4" cy="-1" rx=".8" ry="1.3"/><ellipse cx="4" cy="-1" rx=".8" ry="1.3"/><ellipse cx="0" cy="4" rx=".8" ry="1.3"/></g></g>${d<=12?`<circle cx="${cx}" cy="${cy}" r="4" fill="#fffbf0"/>`:''}</g>`;
+  }
+  function drawCake(d,cells,title) {
+    let content='';
+    for(let i=0;i<d;i++) {
+      const cell=cells[i]||{};
+      const active=cell.present===true;
+      const attrs=cell.keys && cell.interactive ? `class="cake-piece${cell.moved?' is-moved':''}" role="button" tabindex="0" data-area="${cell.area||'play'}" data-origin="${cell.origin||'source'}" data-keys="${escapeText(cell.keys)}" aria-label="${escapeText(cell.label)}"` : '';
+      content+=`<g ${attrs}>${shape(d,i,76,`fill="${active?'#e6bc88':'#f0e4d7'}" class="slice-fill"`)}${shape(d,i,69,`fill="${active?'#f4a1b9':'#f0e4d7'}" class="slice-fill"`)}${active?strawberry(-90+(i+.5)*360/d,d):''}${d>1?shape(d,i,76,'fill="none" stroke="#fffaf1" stroke-width="1.5" pointer-events="none"'):''}${shape(d,i,77,'class="slice-outline" pointer-events="none"')}</g>`;
+    }
+    const hasControls=cells.some(c=>c.interactive);
+    return `<svg xmlns="http://www.w3.org/2000/svg" class="cake-graphic" viewBox="0 0 200 200" role="${hasControls?'group':'img'}" aria-label="${escapeText(title)}"><title>${escapeText(title)}</title><ellipse cx="100" cy="105" rx="87" ry="84" fill="#b39c8320"/><circle cx="100" cy="100" r="87" fill="#fffcf7" stroke="#ccb8a3" stroke-width="2.5"/><circle cx="100" cy="100" r="80" fill="#e8d7c3"/>${content}</svg>`;
+  }
+
+  function cancelAnimation() {ui.animationId+=1;clearTimeout(ui.timer);ui.timer=null;ui.animating=false;}
+  function demonstrationMessage() {
+    return record().task.op==='minus'?'Die Stücke für die Gäste sind weggenommen. Zähle jetzt, was bei Luna bleibt.':'Alle gesuchten Stücke sind auf dem Teller. Zähle sie und schreibe deinen Bruch.';
+  }
+  function settleDemonstration() {
+    const running=ui.animating;
+    cancelAnimation();
+    if(running) {
+      ui.selected=new Set(currentSpec().correctKeys);
+      ui.normalized=true;
+      $('guided-feedback').textContent=demonstrationMessage();
+    }
+  }
+  function focusCurrentTask() {
+    $('task-title').focus({preventScroll:true});
+    $('chapter-label').scrollIntoView({block:'start',behavior:'auto'});
+  }
+  function resetWorkspace() {
+    cancelAnimation();
+    const rec=record(),spec=currentSpec();
+    ui.selected=new Set(rec.solved || rec.guideStep>=2 ? spec.correctKeys : []);
+    ui.normalized=rec.solved || rec.guideStep>0;
+    ui.history=[];
+  }
+  function renderBasket(pop=false) {
+    const total=state.progress.total,filled=Math.min(total,12);
+    $('basket-count').textContent=`${filled} / 12`;
+    $('basket-slots').innerHTML=Array.from({length:12},(_,i)=>`<span class="basket-slot${i<filled?' filled':''}${pop&&i===filled-1?' new':''}">${i<filled?['🍓','🍪','🍰'][i%3]:'·'}</span>`).join('');
+    $('basket-description').textContent=total>=12?`Picknick bereit! Schon ${total} Aufgaben gelöst.`:total===0?'Jede gelöste Aufgabe füllt deinen Korb.':`${total} geschafft! Auch mit Hilfe zählt dein Erfolg.`;
+    $('basket-party').hidden=total<12;
+  }
+  function renderTask() {
+    const rec=record(),task=rec.task,story=C.story(task);
+    $('chapter-label').textContent=story.chapter;
+    $('task-title').textContent=story.title;
+    $('task-story').textContent=story.text;
+    $('task-question').textContent=story.question;
+    $('workspace-instruction').textContent=story.instruction;
+    $('target-title').textContent=story.target;
+    const first=typeof task.a==='number'?`<span>${task.a}</span>`:fractionHTML(...task.a);
+    $('task-equation').innerHTML=`${first}<span aria-hidden="true">${task.op==='plus'?'+':task.op==='minus'?'−':'×'}</span>${fractionHTML(...task.b)}`;
+    $('task-equation').setAttribute('role','img');
+    $('task-equation').setAttribute('aria-label',`${typeof task.a==='number'?task.a:task.a.join('/')} ${task.op==='plus'?'plus':task.op==='minus'?'minus':'mal'} ${task.b.join('/')}`);
+    const descriptions={plus:['Gleich große Stücke','Anders geschnitten','Mehr als ein Kuchen'],minus:['Stücke wegnehmen','Anders geschnitten','Große Kuchenreste'],times:['Den gleichen Bruch mehrmals','Mehr für das Picknick','Ein Teil von einem Teil']};
+    $('level-description').textContent=descriptions[task.op][task.level-1];
+    document.querySelectorAll('[data-operation]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.operation===state.op)));
+    document.querySelectorAll('[data-level]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.level)===task.level)));
+    const shownAnswer=rec.solved?rec.answer:rec.draft||rec.answer;
+    $('answer-numerator').value=shownAnswer?shownAnswer[0]:'';
+    $('answer-denominator').value=shownAnswer?shownAnswer[1]:'';
+    $('answer-numerator').setAttribute('aria-invalid','false');
+    $('answer-denominator').setAttribute('aria-invalid','false');
+    $('answer-numerator').disabled=rec.solved;
+    $('answer-denominator').disabled=rec.solved;
+    $('check-answer').disabled=rec.solved;
+    $('skip-task').hidden=rec.solved;
+    $('solved-explanation').hidden=!rec.solved;
+    const showSubmittedFeedback=rec.attempts>0 && (!rec.draft || rec.answer && rec.draft.every((value,index)=>value.trim()!=='' && Number(value)===rec.answer[index]));
+    $('answer-feedback').hidden=!rec.solved && !showSubmittedFeedback;
+    $('answer-feedback').className=`answer-feedback${rec.solved?' correct':''}`;
+    if(rec.solved) {
+      $('answer-feedback').textContent='✓ Das stimmt! Eine Leckerei kommt in deinen Picknickkorb.';
+      $('solved-equation').textContent=C.equation(task);
+      $('solved-message').textContent=task.op==='minus'?'Die Gäste freuen sich. Luna packt den übrigen Kuchen ein.':task.op==='times' && typeof task.a!=='number'?'Max bekommt seinen Anteil. Wir vergleichen seine Stücke mit einem ganzen Kuchen.':'Luna und Max packen die Stücke ein. Das Picknick kann kommen!';
+    } else if(rec.attempts>0) $('answer-feedback').textContent=C.help(task,rec.errorKind).feedback;
+    $('hint-button').closest('.help-dock').hidden=rec.solved;
+    $('guided-feedback').textContent='';
+    renderWorkspace();renderHints();renderBasket();
+  }
+  function renderWorkspace() {
+    const rec=record(),spec=currentSpec(),task=rec.task;
+    $('source-cakes').classList.toggle('single-source',spec.sources.length===1);
+    $('source-cakes').innerHTML=spec.sources.map(source=>{
+      const d=ui.normalized?spec.d:source.d;
+      const ratio=spec.d/d;
+      const count=Math.max(1,Math.ceil(source.n/source.d));
+      const remaining=source.units-[...ui.selected].filter(key=>key.startsWith(`${source.id}:`)).length;
+      const drawings=[];
+      for(let cake=0;cake<count;cake++) {
+        const cells=Array.from({length:d},(_,slice)=>{
+          const absolute=cake*d+slice;
+          const keys=Array.from({length:ratio},(_,unit)=>`${source.id}:${absolute*ratio+unit}`).filter(key=>Number(key.split(':')[1])<source.units);
+          const present=keys.length>0;
+          const moved=present && keys.every(key=>ui.selected.has(key));
+          return {present,moved,keys:keys.join('|'),interactive:present&&!rec.solved&&!ui.animating,origin:'source',label:`${source.name}, Stück ${absolute+1}: ${moved?'zurückholen':'auf den anderen Teller legen'}`};
+        });
+        drawings.push(drawCake(d,cells,`${source.name}, Kuchen ${cake+1}`));
+      }
+      return `<article class="source-card"><h4 class="source-name">${source.name}</h4><div class="source-amount">${ui.selected.size||ui.normalized?'Noch':'Am Anfang'} ${fractionHTML(ui.selected.size||ui.normalized?remaining:source.n,ui.selected.size||ui.normalized?spec.d:source.d)}</div><div class="source-gallery">${drawings.join('')}</div></article>`;
+    }).join('');
+    const selected=spec.all.filter(key=>ui.selected.has(key));
+    const targetCount=Math.max(1,Math.ceil(selected.length/spec.d));
+    const targetDrawings=[];
+    for(let cake=0;cake<targetCount;cake++) {
+      const cells=Array.from({length:spec.d},(_,index)=>{
+        const key=selected[cake*spec.d+index];
+        return {present:!!key,keys:key||'',interactive:!!key&&!rec.solved&&!ui.animating,origin:'target',label:`Stück ${cake*spec.d+index+1} zurücklegen`};
+      });
+      targetDrawings.push(drawCake(spec.d,cells,`${C.story(task).target}, Kuchen ${cake+1}`));
+    }
+    $('target-cakes').innerHTML=targetDrawings.join('');
+    const amount=`${selected.length}/${spec.d}`;
+    $('target-description').textContent=selected.length ? task.op==='minus'?`${amount} eines Kuchens für die Gäste.`:`${amount} eines Kuchens auf diesem Teller.` : 'Tippe ein Stück an oder ziehe es hierher.';
+    $('cut-pieces').hidden=!spec.canCut;
+    $('cut-pieces').disabled=ui.normalized||ui.animating||rec.solved;
+    $('cut-pieces').textContent=ui.normalized?'Jetzt sind die Stücke gleich groß':task.op==='times' && typeof task.a!=='number'?`Jedes Stück in ${task.a[1]} Teile schneiden`:'Gleich groß schneiden';
+    $('undo-pieces').disabled=ui.history.length===0||ui.animating||rec.solved;
+    $('reset-pieces').disabled=selected.length===0||ui.animating||rec.solved;
+    if(rec.solved) $('workspace-status').textContent='Die Aufgabe ist gelöst. Mit „Weiter feiern“ kommt die nächste Kuchenaufgabe.';
+    else if(ui.animating) $('workspace-status').textContent='Schau zu, wie die Stücke wandern. Zähle mit.';
+    else if(selected.length) $('workspace-status').textContent=task.op==='minus'?`Bei Luna bleiben ${spec.sources[0].units-selected.length}/${spec.d} eines Kuchens. Ein Stück auf dem Gästeteller holt es zurück.`:'Ein Stück auf dem Picknickteller antippen legt es wieder zurück.';
+    else $('workspace-status').textContent='Tippen, ziehen oder mit der Tab-Taste ein Stück wählen und Enter drücken.';
+  }
+  function pushHistory() {ui.history.push({selected:[...ui.selected],normalized:ui.normalized});if(ui.history.length>60)ui.history.shift();}
+  function togglePieces(rawKeys) {
+    if(record().solved||ui.animating) return;
+    const spec=currentSpec(),keys=rawKeys.split('|').filter(key=>spec.all.includes(key));
+    if(!keys.length)return;
+    pushHistory();
+    const takeBack=keys.every(key=>ui.selected.has(key));
+    keys.forEach(key=>takeBack?ui.selected.delete(key):ui.selected.add(key));
+    if(spec.canCut)ui.normalized=true;
+    renderWorkspace();
+  }
+  function renderHints() {
+    const rec=record(),help=C.help(rec.task,rec.errorKind);
+    $('hint-content').hidden=rec.hints===0;
+    $('hint-rule').hidden=rec.hints<2;
+    $('guided-help').hidden=rec.hints<3;
+    $('hint-question').textContent=help.question;
+    $('hint-rule-title').textContent=help.title;
+    $('hint-rule-copy').textContent=help.rule;
+    $('hint-rule-example').textContent=`Zum Beispiel: ${help.example}`;
+    $('hint-button').textContent=['💡 Ich brauche einen Tipp','💡 Noch einen Tipp','👩‍🍳 Gemeinsam rechnen','👩‍🍳 Wir rechnen zusammen'][rec.hints];
+    $('hint-button').disabled=rec.hints>=3;
+    renderGuide();
+  }
+  function renderGuide() {
+    const rec=record();
+    if(rec.guideStep>=2) {
+      $('guided-content').innerHTML='<p class="guide-question">Zähle die Stücke und trage deinen Bruch oben ein.</p><p class="guide-stage">Denke daran: Der Nenner beschreibt einen ganzen Kuchen.</p>';
+      $('replay-demonstration').hidden=false;
+    } else {
+      const step=C.guide(rec.task)[rec.guideStep];
+      $('guided-content').innerHTML=`<p class="guide-stage">Schritt ${rec.guideStep+1} von 2</p><p class="guide-question">${escapeText(step.question)}</p><div class="guide-options">${step.choices.map(value=>`<button type="button" data-guide-value="${value}">${value}</button>`).join('')}</div>`;
+      $('replay-demonstration').hidden=true;
+    }
+  }
+  function runDemonstration() {
+    if(record().solved)return;
+    cancelAnimation();pushHistory();ui.selected.clear();ui.normalized=true;ui.animating=true;
+    const animation=ui.animationId,keys=currentSpec().correctKeys;
+    let index=0;
+    renderWorkspace();
+    const tick=()=>{
+      if(animation!==ui.animationId)return;
+      if(reducedMotion.matches){keys.forEach(key=>ui.selected.add(key));index=keys.length;}
+      else if(index<keys.length)ui.selected.add(keys[index++]);
+      if(index>=keys.length){settleDemonstration();renderWorkspace();}
+      else {renderWorkspace();ui.timer=setTimeout(tick,210);}
+    };
+    ui.timer=setTimeout(tick,reducedMotion.matches?0:150);
+  }
+  function checkAnswer(event) {
+    event.preventDefault();
+    const rec=record();
+    if(rec.solved)return;
+    const n=readInput('answer-numerator',0,10000),d=readInput('answer-denominator',1,10000);
+    const feedback=$('answer-feedback');feedback.hidden=false;
+    $('answer-numerator').setAttribute('aria-invalid',String(n===null));
+    $('answer-denominator').setAttribute('aria-invalid',String(d===null));
+    if(n===null||d===null) {
+      feedback.className='answer-feedback invalid';
+      const input=$(n===null?'answer-numerator':'answer-denominator');
+      feedback.textContent=input.value.trim()==='' ? n===null?'Oben fehlt noch die Anzahl der Stücke.':'Unten fehlt noch die Einteilung des ganzen Kuchens.'
+        : n===null?'Oben brauchst du eine ganze Zahl von 0 bis 10.000.'
+        : input.valueAsNumber===0?'Unten darf keine 0 stehen. Ein ganzer Kuchen besteht aus mindestens einem Stück.'
+        : 'Unten brauchst du eine ganze Zahl von 1 bis 10.000.';
+      input.focus({preventScroll:true});
+      return;
+    }
+    rec.answer=[n,d];
+    const expected=C.calculate(rec.task);
+    if(C.equivalent(n,d,expected.n,expected.d)) {
+      rec.solved=true;
+      state.progress=C.recordSuccess(state.progress,rec.task,rec.attempts,rec.hints>0);
+      resetWorkspace();save();renderTask();renderBasket(true);celebrate();$('next-task').focus({preventScroll:true});$('answer-feedback').scrollIntoView({block:'start',behavior:'auto'});
+    } else {
+      rec.attempts+=1;rec.hints=Math.max(rec.hints,Math.min(3,rec.attempts));
+      rec.errorKind=C.diagnose(rec.task,n,d);feedback.className='answer-feedback';feedback.textContent=C.help(rec.task,rec.errorKind).feedback;
+      renderHints();save();
+      if(rec.hints>=2)$('hint-content').scrollIntoView({block:'nearest',behavior:reducedMotion.matches?'auto':'smooth'});
+    }
+  }
+  function nextTask(level) {
+    cancelAnimation();stopSpeech();
+    const previous=state.records[state.op]?.task;
+    const skill=state.progress.byOp[state.op];
+    if(level){skill.level=level;skill.streak=0;skill.practice=false;}
+    state.records[state.op]=newRecord(C.makeTask(state.op,skill.level,Math.random,previous?C.signature(previous):''));
+    resetWorkspace();renderTask();save();
+    focusCurrentTask();
+    if(skill.practice)toast('Wir üben die gleiche Idee noch einmal mit einfacheren Stücken.');
+  }
+  function setOperation(op) {
+    if(!C.OPERATIONS.includes(op)||op===state.op)return;
+    cancelAnimation();stopSpeech();clearDrag();state.op=op;resetWorkspace();renderTask();save();focusCurrentTask();
+  }
+  function setView(view,focus=false) {
+    if(!['play','explore','rules'].includes(view))return;
+    settleDemonstration();stopSpeech();clearDrag();ui.view=view;
+    ['play','explore','rules'].forEach(name=>{const selected=name===view;$(name+'-panel').hidden=!selected;$(name+'-tab').setAttribute('aria-selected',String(selected));$(name+'-tab').tabIndex=selected?0:-1;});
+    if(view==='play')renderWorkspace();
+    if(focus)$(view+'-tab').focus();
+    syncSpeechControls();
+  }
+  function toast(message) {
+    clearTimeout(ui.toastTimer);$('toast').textContent=message;$('toast').hidden=false;
+    ui.toastTimer=setTimeout(()=>$('toast').hidden=true,4300);
+  }
+  function celebrate() {
+    if(reducedMotion.matches)return;
+    $('celebration').innerHTML=Array.from({length:9},(_,i)=>`<span class="confetti-bit" style="left:${15+i*8}%;animation-delay:${i*.045}s">${['🍓','✨','🌸'][i%3]}</span>`).join('');
+    setTimeout(()=>$('celebration').replaceChildren(),2200);
+  }
+
+  function exploreSnapshot() {
+    explorer.history.push({d:explorer.d,selected:[...explorer.selected]});
+    if(explorer.history.length>80)explorer.history.shift();
+  }
+  function renderExplorer() {
+    const n=explorer.selected.size,d=explorer.d;
+    const last=explorer.selected.size?Math.max(...explorer.selected):0;
+    const count=Math.max(1,Math.ceil((last+1)/d));
+    $('explore-numerator').value=n;$('explore-denominator').value=d;
+    const drawings=[];
+    for(let cake=0;cake<count;cake++) {
+      const cells=Array.from({length:d},(_,i)=>{
+        const index=cake*d+i,present=explorer.selected.has(index);
+        return {present,interactive:true,keys:String(index),area:'explore',label:`Kuchen ${cake+1}, Stück ${i+1}: ${present?'wegnehmen':'hinzufügen'}`};
+      });
+      drawings.push(drawCake(d,cells,`Kuchen ${cake+1} mit ${d} gleich großen Stücken`));
+    }
+    $('explore-cakes').innerHTML=drawings.join('');
+    $('explore-description').textContent=`Du hast ${n}/${d} eines Kuchens. ${d===1?'Ein Stück ist hier ein ganzer Kuchen.':`Je ${d} gleich große Stücke ergeben einen ganzen Kuchen.`}`;
+    $('explore-less').disabled=n===0;
+    $('explore-more').disabled=n>=24;
+    $('explore-cut').disabled=d*2>24 || n*2>24;
+    $('explore-cut').title=$('explore-cut').disabled?'Zähler und Nenner dürfen hier höchstens 24 sein.':'';
+    $('explore-simplify').disabled=C.gcd(n,d)<=1;
+    $('explore-simplify').title=$('explore-simplify').disabled?'Dieser Bruch lässt sich gerade nicht weiter kürzen.':'';
+    $('explore-undo').disabled=explorer.history.length===0;
+    $('explore-error').hidden=true;
+  }
+  function toggleExplore(rawKey) {
+    const index=Number(rawKey);
+    if(!Number.isSafeInteger(index)||index<0||index>575)return;
+    if(!explorer.selected.has(index)&&explorer.selected.size>=24){toast('In der Werkstatt kannst du bis zu 24 Stücke auswählen.');return;}
+    exploreSnapshot();
+    if(explorer.selected.has(index))explorer.selected.delete(index);else explorer.selected.add(index);
+    renderExplorer();$('explore-equivalence').textContent='Du veränderst die Stückzahl. Der Nenner bleibt bei dieser Einteilung gleich.';
+  }
+  function renderRules() {
+    $('rule-cards').innerHTML=RULES.map(rule=>`<article id="${rule.id}" class="rule-card" tabindex="-1"><span class="rule-icon" aria-hidden="true">${rule.icon}</span><h3>${rule.title}</h3><p>${rule.text}</p><p class="rule-equation">${rule.example}</p><div class="rule-actions"><button class="small-button" type="button" data-practice-rule="${rule.id}">Selbst ausprobieren</button><button class="rule-read" type="button" data-read-rule="${rule.id}" aria-label="Merkkarte ${rule.title} vorlesen"${canSpeak?'':' hidden'}>🔊</button></div></article>`).join('');
+  }
+  function showRule(id) {
+    const rule=RULES.find(value=>value.id===id);
+    if(!rule)return;
+    setView('rules');
+    document.querySelectorAll('.rule-card.highlight').forEach(card=>card.classList.remove('highlight'));
+    const card=$(id);card.classList.add('highlight');card.focus({preventScroll:true});card.scrollIntoView({block:'center',behavior:reducedMotion.matches?'auto':'smooth'});
+  }
+
+  const canSpeak='speechSynthesis' in window && typeof window.SpeechSynthesisUtterance==='function';
+  let speechSession=0;
+  let speechFailed=false;
+  function syncSpeechControls() {
+    const button=$('read-aloud');
+    button.hidden=!canSpeak;
+    button.disabled=speechFailed;
+    button.setAttribute('aria-pressed',String(ui.speaking));
+    button.setAttribute('aria-label',speechFailed?'Vorlesen ist hier gerade nicht verfügbar':ui.speaking?'Vorlesen stoppen':ui.view==='play'?'Aufgabe vorlesen':ui.view==='explore'?'Kuchenwerkstatt vorlesen':'Merkkarten vorlesen');
+    $('read-label').textContent=speechFailed?'Vorlesen nicht verfügbar':ui.speaking?'Stoppen':'Vorlesen';
+    if(speechFailed)button.setAttribute('aria-describedby','speech-status');
+    else button.removeAttribute('aria-describedby');
+    document.querySelectorAll('.rule-read').forEach(read=>{read.disabled=speechFailed;read.title=speechFailed?'Vorlesen ist hier gerade nicht verfügbar.':'';});
+  }
+  function stopSpeech() {
+    speechSession+=1;
+    if(canSpeak && ui.speaking)window.speechSynthesis.cancel();
+    ui.speaking=false;syncSpeechControls();
+  }
+  function spoken(text) {
+    return text.replace(/(\d+)\/(\d+)/g,'$1 von $2 Teilen').replace(/×/g,' mal ').replace(/\+/g,' plus ').replace(/−/g,' minus ').replace(/=/g,' gleich ');
+  }
+  function speak(text) {
+    if(!canSpeak||speechFailed)return;
+    stopSpeech();
+    const session=speechSession,utterance=new window.SpeechSynthesisUtterance(spoken(text));
+    utterance.lang='de-DE';utterance.rate=.86;
+    const voice=window.speechSynthesis.getVoices().find(value=>value.lang.toLowerCase().startsWith('de'));
+    if(voice)utterance.voice=voice;
+    ui.speaking=true;syncSpeechControls();
+    const done=()=>{if(session===speechSession){ui.speaking=false;syncSpeechControls();}};
+    utterance.onend=done;
+    const failed=()=>{
+      if(session!==speechSession)return;
+      speechFailed=true;ui.speaking=false;syncSpeechControls();
+      $('speech-status').textContent='Vorlesen ist in diesem Browser gerade nicht verfügbar. Du kannst alle Aufgaben auch lesen.';
+      $('speech-notice').hidden=false;
+      $('speech-notice').scrollIntoView({block:'nearest',behavior:'auto'});
+    };
+    utterance.onerror=event=>{done();if(!['canceled','interrupted'].includes(event.error))failed();};
+    try {window.speechSynthesis.speak(utterance);} catch {failed();}
+  }
+  function readCurrentView() {
+    if(ui.speaking){stopSpeech();return;}
+    if(ui.view==='play') {
+      const story=C.story(record().task);
+      const rec=record();
+      const help=rec.hints>0?C.help(rec.task,rec.errorKind):null;
+      speak(`${story.title}. ${story.text} Alle ganzen Kuchen sind gleich groß. ${story.question}. ${help?help.question:''} ${rec.hints>=2?help.rule:''}`);
+    } else if(ui.view==='explore') speak(`Die Kuchenwerkstatt. Der Zähler oben zählt die vorhandenen Stücke. Der Nenner unten nennt die Anzahl gleich großer Stücke eines ganzen Kuchens. ${$('explore-description').textContent}`);
+    else speak(RULES.map(rule=>`${rule.title}. ${rule.text} Zum Beispiel: ${rule.example}.`).join(' '));
+  }
+
+  function pieceElement(target) {return target instanceof Element?target.closest('.cake-piece'):null;}
+  function actOnPiece(element) {
+    const key=element.dataset.keys,area=element.dataset.area,origin=element.dataset.origin;
+    if(area==='explore')toggleExplore(key);else togglePieces(key);
+    return {key,area,origin};
+  }
+  function focusPiece(previous) {
+    const next=[...document.querySelectorAll('.cake-piece')].find(element=>element.dataset.keys===previous.key && element.dataset.area===previous.area && element.dataset.origin===previous.origin);
+    if(next)next.focus({preventScroll:true});
+  }
+  function inside(event,element) {const r=element.getBoundingClientRect();return event.clientX>=r.left&&event.clientX<=r.right&&event.clientY>=r.top&&event.clientY<=r.bottom;}
+  function clearDrag() {ui.drag=null;$('drag-piece').hidden=true;$('target-zone').classList.remove('drag-over');}
+  document.addEventListener('pointerdown',event=>{
+    const piece=pieceElement(event.target);
+    if(!piece||piece.dataset.area!=='play'||record().solved||ui.animating||event.button!==0)return;
+    ui.drag={x:event.clientX,y:event.clientY,keys:piece.dataset.keys,origin:piece.dataset.origin,moved:false,pointerId:event.pointerId};
+    if(typeof event.target.setPointerCapture==='function')event.target.setPointerCapture(event.pointerId);
+  });
+  document.addEventListener('pointermove',event=>{
+    const drag=ui.drag;
+    if(!drag||drag.pointerId!==event.pointerId)return;
+    if(Math.hypot(event.clientX-drag.x,event.clientY-drag.y)>8)drag.moved=true;
+    if(!drag.moved)return;
+    event.preventDefault();
+    $('drag-piece').hidden=false;$('drag-piece').style.left=event.clientX+'px';$('drag-piece').style.top=event.clientY+'px';
+    $('target-zone').classList.toggle('drag-over',drag.origin==='source'&&inside(event,$('target-zone')));
+  },{passive:false});
+  document.addEventListener('pointerup',event=>{
+    const drag=ui.drag;
+    if(!drag||drag.pointerId!==event.pointerId)return;
+    if(drag.moved) {
+      ui.suppressClick=Date.now()+350;
+      const validDrop=drag.origin==='source'?inside(event,$('target-zone')):inside(event,$('source-cakes'));
+      if(validDrop)togglePieces(drag.keys);
+      else toast(drag.origin==='source'?'Lege das Stück auf den grünen Teller. Du kannst es auch einfach antippen.':'Zum Zurücklegen kannst du das Stück einfach antippen.');
+    }
+    clearDrag();
+  });
+  document.addEventListener('pointercancel',clearDrag);
+  document.addEventListener('click',event=>{
+    const piece=pieceElement(event.target);
+    if(piece && Date.now()>ui.suppressClick)actOnPiece(piece);
+    const practice=event.target.closest('[data-practice-rule]');
+    if(practice) {
+      const rule=RULES.find(value=>value.id===practice.dataset.practiceRule);
+      if(rule.view)setView(rule.view);
+      else {setView('play');state.op=rule.op;nextTask(rule.level);}
+    }
+    const read=event.target.closest('[data-read-rule]');
+    if(read){const rule=RULES.find(value=>value.id===read.dataset.readRule);if(rule)speak(`${rule.title}. ${rule.text}. Zum Beispiel: ${rule.example}`);}
+    const guideButton=event.target.closest('[data-guide-value]');
+    if(guideButton && record().guideStep<2) {
+      const rec=record(),step=C.guide(rec.task)[rec.guideStep];
+      if(Number(guideButton.dataset.guideValue)!==step.correct) {$('guided-feedback').textContent=step.note;return;}
+      rec.guideStep+=1;$('guided-feedback').textContent='Genau!';
+      if(rec.guideStep===1 && currentSpec().canCut){pushHistory();ui.normalized=true;renderWorkspace();}
+      renderGuide();save();
+      if(rec.guideStep===2)runDemonstration();
+    }
+  });
+  document.addEventListener('keydown',event=>{
+    const piece=pieceElement(event.target);
+    if(piece && ['Enter',' '].includes(event.key)){event.preventDefault();focusPiece(actOnPiece(piece));}
+  });
+
+  ['play','explore','rules'].forEach((view,index)=>{
+    $(view+'-tab').addEventListener('click',()=>setView(view));
+    $(view+'-tab').addEventListener('keydown',event=>{
+      if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) {
+        event.preventDefault();
+        const next=event.key==='Home'?0:event.key==='End'?2:event.key==='ArrowRight'?(index+1)%3:(index+2)%3;
+        setView(['play','explore','rules'][next],true);
+      }
+    });
+  });
+  document.querySelectorAll('[data-operation]').forEach(button=>button.addEventListener('click',()=>setOperation(button.dataset.operation)));
+  document.querySelectorAll('[data-level]').forEach(button=>button.addEventListener('click',()=>nextTask(Number(button.dataset.level))));
+  $('answer-form').addEventListener('submit',checkAnswer);
+  $('answer-form').addEventListener('input',()=>{
+    const rec=record();
+    if(rec.solved)return;
+    rec.draft=[$('answer-numerator').value,$('answer-denominator').value];
+    $('answer-feedback').hidden=true;
+    $('answer-numerator').setAttribute('aria-invalid','false');
+    $('answer-denominator').setAttribute('aria-invalid','false');
+    save();
+  });
+  $('next-task').addEventListener('click',()=>nextTask());
+  $('skip-task').addEventListener('click',()=>{
+    const rec=record();
+    if(rec.attempts>=3){const skill=state.progress.byOp[state.op];skill.level=Math.max(1,rec.task.level-1);skill.practice=true;skill.streak=0;}
+    nextTask();
+  });
+  $('hint-button').addEventListener('click',()=>{const rec=record();rec.hints=Math.min(3,rec.hints+1);renderHints();save();});
+  $('open-relevant-rule').addEventListener('click',()=>showRule(C.help(record().task,record().errorKind).ruleId));
+  $('replay-demonstration').addEventListener('click',runDemonstration);
+  $('undo-pieces').addEventListener('click',()=>{const last=ui.history.pop();if(last){ui.selected=new Set(last.selected);ui.normalized=last.normalized;renderWorkspace();}});
+  $('reset-pieces').addEventListener('click',()=>{pushHistory();ui.selected.clear();renderWorkspace();});
+  $('cut-pieces').addEventListener('click',()=>{pushHistory();ui.normalized=true;renderWorkspace();});
+  $('read-aloud').addEventListener('click',readCurrentView);
+  $('retry-speech').addEventListener('click',()=>{speechFailed=false;$('speech-notice').hidden=true;syncSpeechControls();readCurrentView();});
+  if(canSpeak)window.speechSynthesis.addEventListener('voiceschanged',()=>{
+    if(speechFailed && window.speechSynthesis.getVoices().length){speechFailed=false;$('speech-notice').hidden=true;syncSpeechControls();}
+  });
+  window.addEventListener('pagehide',stopSpeech);
+
+  $('explore-form').addEventListener('submit',event=>{
+    event.preventDefault();
+    const n=readInput('explore-numerator',0,24),d=readInput('explore-denominator',1,24);
+    if(n===null||d===null){$('explore-error').hidden=false;$('explore-error').textContent='Nimm ganze Zahlen: oben 0 bis 24, unten 1 bis 24. Der Nenner darf nicht 0 sein.';return;}
+    exploreSnapshot();explorer.d=d;explorer.selected=new Set(Array.from({length:n},(_,i)=>i));renderExplorer();
+    $('explore-equivalence').textContent='Tippe die Kuchenstücke an und beobachte, wie sich der Zähler verändert.';
+  });
+  $('explore-more').addEventListener('click',()=>{if(explorer.selected.size>=24)return;let index=0;while(explorer.selected.has(index))index+=1;toggleExplore(String(index));});
+  $('explore-less').addEventListener('click',()=>{if(explorer.selected.size)toggleExplore(String(Math.max(...explorer.selected)));});
+  $('explore-cut').addEventListener('click',()=>{
+    const n=explorer.selected.size,d=explorer.d;
+    if(n*2>24||d*2>24)return;
+    exploreSnapshot();explorer.d*=2;explorer.selected=new Set([...explorer.selected].flatMap(index=>[index*2,index*2+1]));renderExplorer();
+    $('explore-equivalence').textContent=`${n}/${d} = ${n*2}/${d*2}. Jedes Stück wurde halbiert. Es ist immer noch gleich viel Kuchen!`;
+  });
+  $('explore-simplify').addEventListener('click',()=>{
+    const n=explorer.selected.size,d=explorer.d,g=C.gcd(n,d);
+    if(g<=1)return;
+    exploreSnapshot();explorer.d=d/g;explorer.selected=new Set(Array.from({length:n/g},(_,i)=>i));renderExplorer();
+    $('explore-equivalence').textContent=`${n}/${d} = ${n/g}/${d/g}. Wir legen Stücke zusammen. Die Kuchenmenge bleibt gleich.`;
+  });
+  $('explore-undo').addEventListener('click',()=>{const last=explorer.history.pop();if(last){explorer.d=last.d;explorer.selected=new Set(last.selected);renderExplorer();$('explore-equivalence').textContent='Dein letzter Schritt ist rückgängig gemacht.';}});
+
+  renderRules();resetWorkspace();renderTask();renderExplorer();syncSpeechControls();save();
+})();
+
+</script>
+</body>
+</html>
